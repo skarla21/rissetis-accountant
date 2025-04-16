@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
-import { FaUser, FaBriefcase, FaNewspaper, FaEnvelope } from "react-icons/fa";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const t = useTranslations();
@@ -34,40 +34,7 @@ export default function Home() {
       />
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-40">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex justify-center space-x-8">
-            <button
-              onClick={() => scrollToSection("profile")}
-              className="flex items-center space-x-2 text-gray-600 hover:text-blue-500"
-            >
-              <FaUser />
-              <span>{t("navigation.profile")}</span>
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="flex items-center space-x-2 text-gray-600 hover:text-blue-500"
-            >
-              <FaBriefcase />
-              <span>{t("navigation.services")}</span>
-            </button>
-            <button
-              onClick={() => scrollToSection("articles")}
-              className="flex items-center space-x-2 text-gray-600 hover:text-blue-500"
-            >
-              <FaNewspaper />
-              <span>{t("navigation.articles")}</span>
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="flex items-center space-x-2 text-gray-600 hover:text-blue-500"
-            >
-              <FaEnvelope />
-              <span>{t("navigation.contact")}</span>
-            </button>
-          </div>
-        </div>
-      </nav>
+      <Navbar scrollToSection={scrollToSection} />
 
       {/* Main content */}
       <main className="pt-20">
@@ -108,7 +75,9 @@ export default function Home() {
             >
               <h2 className="text-3xl font-bold mb-8">{t("services.title")}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {Object.entries(t.raw("services.items")).map(([key, value]) => (
+                {Object.entries(
+                  t.raw("services.items") as Record<string, string>
+                ).map(([key, value]) => (
                   <motion.div
                     key={key}
                     whileHover={{ scale: 1.05 }}
@@ -136,7 +105,9 @@ export default function Home() {
             >
               <h2 className="text-3xl font-bold mb-8">{t("articles.title")}</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {Object.entries(t.raw("articles.items")).map(([key, value]) => (
+                {Object.entries(
+                  t.raw("articles.items") as Record<string, string>
+                ).map(([key, value]) => (
                   <motion.div
                     key={key}
                     whileHover={{ scale: 1.05 }}
