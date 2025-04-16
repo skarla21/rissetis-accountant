@@ -1,0 +1,45 @@
+{
+  "navigation": {
+    "profile": "Profile",
+    "services": "Services",
+    "articles": "Articles",
+    "contact": "Contact"
+  },
+  "profile": {
+    "title": "Professional Accountant",
+    "subtitle": "Your Trusted Financial Partner",
+    "description": "With over 15 years of experience in accounting and financial management, I provide comprehensive solutions for businesses and individuals."
+  },
+  "services": {
+    "title": "Our Services",
+    "items": {
+      "bookkeeping": "Bookkeeping & Accounting",
+      "tax": "Tax Planning & Preparation",
+      "audit": "Audit & Assurance",
+      "consulting": "Financial Consulting"
+    }
+  },
+  "articles": {
+    "title": "Latest Articles",
+    "readMore": "Read More",
+    "items": {
+      "taxTips": "Essential Tax Tips for 2024",
+      "business": "Growing Your Business",
+      "accounting": "Modern Accounting Practices"
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message"
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email"
+    }
+  }
+}
