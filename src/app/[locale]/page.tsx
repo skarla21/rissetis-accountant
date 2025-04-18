@@ -37,7 +37,7 @@ export default function Home() {
       <Navbar scrollToSection={scrollToSection} />
 
       {/* Main content */}
-      <main className="pt-20">
+      <main className="min-h-screen">
         {/* Profile Section */}
         <section
           id="profile"
