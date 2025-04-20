@@ -1,10 +1,17 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { FaUser, FaBriefcase, FaNewspaper, FaEnvelope } from "react-icons/fa";
+import {
+  FaUser,
+  FaBriefcase,
+  FaNewspaper,
+  FaEnvelope,
+  FaFacebook,
+} from "react-icons/fa";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface NavbarProps {
   scrollToSection: (sectionId: string) => void;
@@ -40,71 +47,208 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-40">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <motion.button
-            onClick={() => scrollToSection("profile")}
-            className="text-2xl font-bold text-blue-500 hover:text-blue-600"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            ΓΡ
-          </motion.button>
+    <>
+      {/* Main Navbar - Hidden on mobile */}
+      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-40 hidden md:block">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <motion.button
+              onClick={() => scrollToSection("profile")}
+              className="flex items-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Image
+                src="/assets/imgs/rissetis_logo.png"
+                alt="Rissetis Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+            </motion.button>
 
-          {/* Navigation Links */}
-          <div className="flex justify-center space-x-8">
+            {/* Navigation Links */}
+            <div className="flex justify-center space-x-8">
+              <div className="relative group">
+                <button
+                  onClick={() => scrollToSection("profile")}
+                  className={`flex items-center space-x-2 ${
+                    activeSection === "profile"
+                      ? "text-blue-500"
+                      : "text-gray-600 group-hover:text-blue-600"
+                  }`}
+                >
+                  <FaUser />
+                  <span>{t("navigation.profile")}</span>
+                </button>
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
+                    activeSection === "profile"
+                      ? "w-full bg-blue-500"
+                      : "w-0 bg-blue-600 group-hover:w-full"
+                  }`}
+                ></span>
+              </div>
+              <div className="relative group">
+                <button
+                  onClick={() => scrollToSection("services")}
+                  className={`flex items-center space-x-2 ${
+                    activeSection === "services"
+                      ? "text-blue-500"
+                      : "text-gray-600 group-hover:text-blue-600"
+                  }`}
+                >
+                  <FaBriefcase />
+                  <span>{t("navigation.services")}</span>
+                </button>
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
+                    activeSection === "services"
+                      ? "w-full bg-blue-500"
+                      : "w-0 bg-blue-600 group-hover:w-full"
+                  }`}
+                ></span>
+              </div>
+              <div className="relative group">
+                <button
+                  onClick={() => scrollToSection("articles")}
+                  className={`flex items-center space-x-2 ${
+                    activeSection === "articles"
+                      ? "text-blue-500"
+                      : "text-gray-600 group-hover:text-blue-600"
+                  }`}
+                >
+                  <FaNewspaper />
+                  <span>{t("navigation.articles")}</span>
+                </button>
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
+                    activeSection === "articles"
+                      ? "w-full bg-blue-500"
+                      : "w-0 bg-blue-600 group-hover:w-full"
+                  }`}
+                ></span>
+              </div>
+              <div className="relative group">
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className={`flex items-center space-x-2 ${
+                    activeSection === "contact"
+                      ? "text-blue-500"
+                      : "text-gray-600 group-hover:text-blue-600"
+                  }`}
+                >
+                  <FaEnvelope />
+                  <span>{t("navigation.contact")}</span>
+                </button>
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
+                    activeSection === "contact"
+                      ? "w-full bg-blue-500"
+                      : "w-0 bg-blue-600 group-hover:w-full"
+                  }`}
+                ></span>
+              </div>
+            </div>
+
+            {/* Right section with Locale Switcher and Social Media */}
+            <div className="flex items-center space-x-10">
+              {/* Social Media */}
+              <a
+                href="https://www.facebook.com/profile.php?id=100088632974282"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                <FaFacebook size={24} />
+              </a>
+
+              {/* Locale Switcher */}
+              <LocaleSwitcher />
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Top Navbar - Logo and Right Section */}
+      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-40 md:hidden">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <motion.button
+              onClick={() => scrollToSection("profile")}
+              className="flex items-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Image
+                src="/assets/imgs/rissetis_logo.png"
+                alt="Rissetis Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
+            </motion.button>
+
+            {/* Right section with Locale Switcher and Social Media */}
+            <div className="flex items-center space-x-10">
+              {/* Social Media */}
+              <a
+                href="https://www.facebook.com/profile.php?id=100088632974282"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-blue-600 transition-colors"
+              >
+                <FaFacebook size={24} />
+              </a>
+
+              {/* Locale Switcher */}
+              <LocaleSwitcher />
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Navigation Links - Bottom Fixed */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-40">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex justify-around items-center">
             <button
               onClick={() => scrollToSection("profile")}
-              className={`flex items-center space-x-2 ${
-                activeSection === "profile"
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-blue-500"
+              className={`flex flex-col items-center ${
+                activeSection === "profile" ? "text-blue-500" : "text-gray-600"
               }`}
             >
-              <FaUser />
-              <span>{t("navigation.profile")}</span>
+              <FaUser size={20} />
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className={`flex items-center space-x-2 ${
-                activeSection === "services"
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-blue-500"
+              className={`flex flex-col items-center ${
+                activeSection === "services" ? "text-blue-500" : "text-gray-600"
               }`}
             >
-              <FaBriefcase />
-              <span>{t("navigation.services")}</span>
+              <FaBriefcase size={20} />
             </button>
             <button
               onClick={() => scrollToSection("articles")}
-              className={`flex items-center space-x-2 ${
-                activeSection === "articles"
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-blue-500"
+              className={`flex flex-col items-center ${
+                activeSection === "articles" ? "text-blue-500" : "text-gray-600"
               }`}
             >
-              <FaNewspaper />
-              <span>{t("navigation.articles")}</span>
+              <FaNewspaper size={20} />
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className={`flex items-center space-x-2 ${
-                activeSection === "contact"
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-blue-500"
+              className={`flex flex-col items-center ${
+                activeSection === "contact" ? "text-blue-500" : "text-gray-600"
               }`}
             >
-              <FaEnvelope />
-              <span>{t("navigation.contact")}</span>
+              <FaEnvelope size={20} />
             </button>
           </div>
-
-          {/* Locale Switcher */}
-          <LocaleSwitcher />
         </div>
       </div>
-    </nav>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const t = useTranslations();
@@ -37,7 +38,7 @@ export default function Home() {
       <Navbar scrollToSection={scrollToSection} />
 
       {/* Main content */}
-      <main className="min-h-screen">
+      <main>
         {/* Profile Section */}
         <section
           id="profile"
@@ -177,6 +178,9 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
+        {/* Footer */}
+        <Footer />
       </main>
     </div>
   );
