@@ -2,9 +2,39 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Inter } from "next/font/google";
-import "../globals.css";
+import type { Metadata } from "next";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+export const metadata: Metadata = {
+  title: "Λογιστικά Ρισσέτης",
+  metadataBase: new URL("https://logistika-rissetis.vercel.app"), //change this
+  icons: {
+    icon: [
+      {
+        url: "/assets/imgs/rissetis_logo.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+    ],
+  },
+  openGraph: {
+    type: "website",
+    title: "Λογιστικά Ρισσέτης",
+    siteName: "Λογιστικά Ρισσέτης",
+    images: [
+      {
+        url: "/assets/imgs/rissetis.jpg",
+        width: 1181,
+        height: 709,
+      },
+    ],
+  },
+};
 
 export default async function LocaleLayout({
   children,
@@ -29,7 +59,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.className} overflow-y-scroll`}>
+      <body className={`${inter.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
