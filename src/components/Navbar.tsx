@@ -18,7 +18,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ scrollToSection }: NavbarProps) {
-  const t = useTranslations();
+  const navigationText = useTranslations("navigation");
   const [activeSection, setActiveSection] = useState<string>("profile");
 
   // Update active section based on scroll position
@@ -80,7 +80,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                   }`}
                 >
                   <FaUser />
-                  <span>{t("navigation.profile")}</span>
+                  <span>{navigationText("profile")}</span>
                 </button>
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
@@ -100,7 +100,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                   }`}
                 >
                   <FaBriefcase />
-                  <span>{t("navigation.services")}</span>
+                  <span>{navigationText("services")}</span>
                 </button>
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
@@ -120,7 +120,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                   }`}
                 >
                   <FaNewspaper />
-                  <span>{t("navigation.articles")}</span>
+                  <span>{navigationText("articles")}</span>
                 </button>
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
@@ -140,7 +140,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                   }`}
                 >
                   <FaEnvelope />
-                  <span>{t("navigation.contact")}</span>
+                  <span>{navigationText("contact")}</span>
                 </button>
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 transition-all ${

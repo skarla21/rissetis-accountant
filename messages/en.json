@@ -32,17 +32,30 @@
     }
   },
   "contact": {
-    "title": "Get in Touch",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "send": "Send Message"
-    },
-    "info": {
-      "address": "Address",
-      "phone": "Phone",
-      "email": "Email"
+    "title": "Find Us",
+    "contact-title": "Contact Info",
+    "address": "Artotinis 21, Pagkrati, 116 33, Athens, Greece",
+    "hours-title": "Hours",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "am": "am",
+    "pm": "pm",
+    "closed": "Closed",
+    "contact-form": {
+      "message-title": "Send Us a Message",
+      "message-name": "Your Name",
+      "message-mail": "Email Address",
+      "message-text": "Message",
+      "message-sending": "Sending...",
+      "message-send": "Send Message",
+      "message-success": "Message sent successfully! We'll respond shortly.",
+      "message-error": "Something went wrong.",
+      "invalid-email": "Please enter a valid email address"
     }
   }
 }

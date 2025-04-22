@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-  const t = useTranslations("footer");
+  const footerText = useTranslations("footer");
 
   return (
     <footer className="hidden md:block bg-gray-50 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] py-8 mt-16">
@@ -20,7 +20,7 @@ export default function Footer() {
 
           {/* Quote */}
           <p className="text-gray-600 text-center italic max-w-2xl">
-            {t("quote")}
+            {footerText("quote")}
           </p>
 
           {/* Copyright and Credits */}

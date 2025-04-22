@@ -32,17 +32,30 @@
     }
   },
   "contact": {
-    "title": "Επικοινωνήστε μαζί μας",
-    "form": {
-      "name": "Όνομα",
-      "email": "Email",
-      "message": "Μήνυμα",
-      "send": "Αποστολή Μηνύματος"
-    },
-    "info": {
-      "address": "Διεύθυνση",
-      "phone": "Τηλέφωνο",
-      "email": "Email"
+    "title": "Βρείτε μας",
+    "contact-title": "Επικοινωνία",
+    "address": "Αρτοτίνης 21, Παγκράτι, 116 33, Αθήνα Αττικής",
+    "hours-title": "Ώρες λειτουργίας",
+    "monday": "Δευτέρα",
+    "tuesday": "Τρίτη",
+    "wednesday": "Τετάρτη",
+    "thursday": "Πέμπτη",
+    "friday": "Παρασκευή",
+    "saturday": "Σάββατο",
+    "sunday": "Κυριακή",
+    "am": "πμ",
+    "pm": "μμ",
+    "closed": "Κλειστά",
+    "contact-form": {
+      "message-title": "Στείλτε μας ένα μήνυμα",
+      "message-name": "Όνομα",
+      "message-mail": "Διεύθυνση email",
+      "message-text": "Μήνυμα",
+      "message-sending": "Αποστολή...",
+      "message-send": "Αποστολή μηνύματος",
+      "message-success": "Το μήνυμα εστάλη. Θα επικοινωνήσουμε μαζί σας σύντομα.",
+      "message-error": "Κάτι πήγε λάθος.",
+      "invalid-email": "Συμπληρώστε έγκυρη διεύθυνση email"
     }
   }
 }

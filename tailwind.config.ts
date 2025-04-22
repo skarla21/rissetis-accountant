@@ -15,6 +15,9 @@ const config: Config = {
           "2xl": "1400px",
         },
       },
+      colors: {
+        rissetis: "#f3b222",
+      },
     },
   },
   plugins: [],
