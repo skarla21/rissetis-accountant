@@ -7,6 +7,7 @@ import {
   FaNewspaper,
   FaEnvelope,
   FaFacebook,
+  FaInstagram,
 } from "react-icons/fa";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { motion } from "framer-motion";
@@ -153,19 +154,30 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
             </div>
 
             {/* Right section with Locale Switcher and Social Media */}
-            <div className="flex items-center space-x-10">
-              {/* Social Media */}
-              <a
-                href="https://www.facebook.com/profile.php?id=100088632974282"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                <FaFacebook size={24} />
-              </a>
-
-              {/* Locale Switcher */}
-              <LocaleSwitcher />
+            <div className="flex space-x-8">
+              <div className="flex space-x-4">
+                {/* Social Media */}
+                <a
+                  href="https://www.facebook.com/profile.php?id=100088632974282"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  <FaFacebook size={24} />
+                </a>
+                <a
+                  href="https://www.instagram.com/george.risse/#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 transition-colors hover:text-[#E1306C]"
+                >
+                  <FaInstagram size={24} />
+                </a>
+              </div>
+              <div className="flex">
+                {/* Locale Switcher */}
+                <LocaleSwitcher />
+              </div>
             </div>
           </div>
         </div>
@@ -192,19 +204,30 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
             </motion.button>
 
             {/* Right section with Locale Switcher and Social Media */}
-            <div className="flex items-center space-x-10">
-              {/* Social Media */}
-              <a
-                href="https://www.facebook.com/profile.php?id=100088632974282"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 transition-colors"
-              >
-                <FaFacebook size={24} />
-              </a>
-
-              {/* Locale Switcher */}
-              <LocaleSwitcher />
+            <div className="flex space-x-8">
+              <div className="flex space-x-4">
+                {/* Social Media */}
+                <a
+                  href="https://www.facebook.com/profile.php?id=100088632974282"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  <FaFacebook size={24} />
+                </a>
+                <a
+                  href="https://www.instagram.com/george.risse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 transition-colors hover:text-[#E1306C]"
+                >
+                  <FaInstagram size={24} />
+                </a>
+              </div>
+              <div className="flex">
+                {/* Locale Switcher */}
+                <LocaleSwitcher />
+              </div>
             </div>
           </div>
         </div>
