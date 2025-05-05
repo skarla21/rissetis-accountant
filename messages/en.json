@@ -24,12 +24,8 @@
   },
   "articles": {
     "title": "Latest Articles",
-    "readMore": "Read More",
-    "items": {
-      "taxTips": "Essential Tax Tips for 2024",
-      "business": "Growing Your Business",
-      "accounting": "Modern Accounting Practices"
-    }
+    "altTitle": "Tax Article",
+    "readMore": "Read More"
   },
   "contact": {
     "title": "Find Us",
