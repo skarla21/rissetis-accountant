@@ -71,7 +71,10 @@
     "urlList": {
       "title": "Υπάρχοντα URL",
       "noUrls": "Δεν βρέθηκαν URL",
-      "remove": "Διαγραφή"
+      "remove": "Διαγραφή",
+      "url": "URL",
+      "date": "Ημερομηνία",
+      "articleTitle": "Τίτλος Άρθρου"
     },
     "messages": {
       "invalidPassword": "Μη έγκυρος κωδικός",

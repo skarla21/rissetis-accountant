@@ -39,7 +39,16 @@ export default function ArticlesSection() {
           ...metadataResults[index],
         }));
 
-        setArticles(articlesWithMetadata);
+        // Sort articles by date (latest first)
+        const sortedArticles = articlesWithMetadata.sort((a, b) => {
+          const [aMonth, aDay, aYear] = a.date.split(".").map(Number);
+          const [bMonth, bDay, bYear] = b.date.split(".").map(Number);
+          const dateA = new Date(aYear, aMonth - 1, aDay);
+          const dateB = new Date(bYear, bMonth - 1, bDay);
+          return dateB.getTime() - dateA.getTime();
+        });
+
+        setArticles(sortedArticles);
       } catch (error) {
         console.error("Error fetching articles:", error);
         setArticles([]);

@@ -71,7 +71,10 @@
     "urlList": {
       "title": "Existing URLs",
       "noUrls": "No URLs found",
-      "remove": "Remove"
+      "remove": "Remove",
+      "url": "URL",
+      "date": "Date",
+      "articleTitle": "Article Title"
     },
     "messages": {
       "invalidPassword": "Invalid password",
