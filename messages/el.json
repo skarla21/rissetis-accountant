@@ -53,5 +53,32 @@
       "message-error": "Κάτι πήγε λάθος.",
       "invalid-email": "Συμπληρώστε έγκυρη διεύθυνση email"
     }
+  },
+  "admin": {
+    "title": "Πίνακας Διαχείρισης",
+    "returnButton": "Επιστροφή στην Αρχική",
+    "passwordRequired": "Παρακαλώ εισάγετε τον κωδικό",
+    "urlRequired": "Παρακαλώ εισάγετε το URL",
+    "passwordSection": {
+      "title": "Κωδικός Διαχειριστή",
+      "placeholder": "Εισάγετε τον κωδικό για όλες τις ενέργειες"
+    },
+    "addUrl": {
+      "title": "Προσθήκη Νέου URL",
+      "urlPlaceholder": "Εισάγετε το URL του άρθρου",
+      "button": "Προσθήκη URL"
+    },
+    "urlList": {
+      "title": "Υπάρχοντα URL",
+      "noUrls": "Δεν βρέθηκαν URL",
+      "remove": "Διαγραφή"
+    },
+    "messages": {
+      "invalidPassword": "Μη έγκυρος κωδικός",
+      "urlAdded": "Το URL προστέθηκε επιτυχώς",
+      "urlAddFailed": "Αποτυχία προσθήκης URL",
+      "urlRemoved": "Το URL αφαιρέθηκε επιτυχώς",
+      "urlRemoveFailed": "Αποτυχία αφαίρεσης URL"
+    }
   }
 }

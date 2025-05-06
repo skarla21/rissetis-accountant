@@ -53,5 +53,32 @@
       "message-error": "Something went wrong.",
       "invalid-email": "Please enter a valid email address"
     }
+  },
+  "admin": {
+    "title": "Admin Panel",
+    "returnButton": "Return to Home",
+    "passwordRequired": "Please enter password",
+    "urlRequired": "Please enter URL",
+    "passwordSection": {
+      "title": "Admin Password",
+      "placeholder": "Enter password for all actions"
+    },
+    "addUrl": {
+      "title": "Add New URL",
+      "urlPlaceholder": "Enter article URL",
+      "button": "Add URL"
+    },
+    "urlList": {
+      "title": "Existing URLs",
+      "noUrls": "No URLs found",
+      "remove": "Remove"
+    },
+    "messages": {
+      "invalidPassword": "Invalid password",
+      "urlAdded": "URL added successfully",
+      "urlAddFailed": "Failed to add URL",
+      "urlRemoved": "URL removed successfully",
+      "urlRemoveFailed": "Failed to remove URL"
+    }
   }
 }

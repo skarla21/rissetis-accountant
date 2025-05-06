@@ -1,14 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import {
-  FaUser,
-  FaBriefcase,
-  FaNewspaper,
-  FaEnvelope,
-  FaFacebook,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaUser, FaBriefcase, FaNewspaper, FaEnvelope } from "react-icons/fa";
+import SocialMedia from "./SocialMedia";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -157,22 +151,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
             <div className="flex space-x-8">
               <div className="flex space-x-4">
                 {/* Social Media */}
-                <a
-                  href="https://www.facebook.com/profile.php?id=100088632974282"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  <FaFacebook size={24} />
-                </a>
-                <a
-                  href="https://www.instagram.com/george.risse/#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 transition-colors hover:text-[#E1306C]"
-                >
-                  <FaInstagram size={24} />
-                </a>
+                <SocialMedia />
               </div>
               <div className="flex">
                 {/* Locale Switcher */}
@@ -207,22 +186,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
             <div className="flex space-x-8">
               <div className="flex space-x-4">
                 {/* Social Media */}
-                <a
-                  href="https://www.facebook.com/profile.php?id=100088632974282"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  <FaFacebook size={24} />
-                </a>
-                <a
-                  href="https://www.instagram.com/george.risse"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 transition-colors hover:text-[#E1306C]"
-                >
-                  <FaInstagram size={24} />
-                </a>
+                <SocialMedia />
               </div>
               <div className="flex">
                 {/* Locale Switcher */}
