@@ -5,7 +5,11 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["www.taxheaven.gr"], // add other sources if needed
+    remotePatterns: [
+      {
+        hostname: "www.taxheaven.gr",
+      },
+    ],
   },
 };
 

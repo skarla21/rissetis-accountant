@@ -6,7 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
 import { useEffect, useState } from "react";
-import { getArticleMetadata, getAllArticleUrls } from "@/server/articleActions";
+import { getAllArticleUrls } from "@/server/articleActions";
+import { getArticleMetadata } from "@/lib/metadata";
 import { ArticleMetadata, TaxArticle } from "@/types/articles";
 
 export default function ArticlesSection() {

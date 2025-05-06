@@ -60,6 +60,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 width={40}
                 height={40}
                 className="object-contain"
+                priority
               />
             </motion.button>
 
@@ -179,6 +180,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 width={40}
                 height={40}
                 className="object-contain"
+                priority
               />
             </motion.button>
 
