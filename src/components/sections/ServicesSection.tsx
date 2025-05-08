@@ -6,6 +6,7 @@ import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 import { IoChevronForward } from "react-icons/io5";
 import SectionWrapper from "@/components/SectionWrapper";
+import { createPortal } from "react-dom";
 
 interface ServiceItem {
   title: string;
@@ -71,43 +72,44 @@ export default function ServicesSection() {
         </div>
       </div>
 
-      <Dialog
-        open={!!selectedService}
-        onClose={() => setSelectedService(null)}
-        className="relative z-50"
-      >
-        <div className="fixed inset-0 bg-black/25" aria-hidden="true" />
+      {selectedService &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div className="fixed inset-0" style={{ zIndex: 100 }}>
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 bg-black/25"
+              aria-hidden="true"
+              onClick={() => setSelectedService(null)}
+            />
 
-        <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4">
-            <div className="w-full max-w-md md:max-w-2xl lg:max-w-4xl transform overflow-hidden rounded-2xl bg-white shadow-xl transition-all">
-              {selectedService && (
-                <>
-                  <div className="bg-gray-100 px-6 py-4">
-                    <div className="text-2xl font-bold text-gray-900">
-                      {selectedService.title}
-                    </div>
+            {/* Dialog Container */}
+            <div className="fixed inset-0 pt-20 flex items-center justify-center p-4 overflow-y-auto">
+              <div className="relative w-full max-w-md md:max-w-2xl lg:max-w-4xl bg-white rounded-lg shadow-xl">
+                <div className="bg-gray-100 px-6 py-4">
+                  <div className="text-2xl font-bold text-gray-900">
+                    {selectedService.title}
                   </div>
-                  <div className="p-6">
-                    <div className="prose prose-lg max-w-none">
-                      {formatDescription(selectedService.description)}
-                    </div>
-                    <div className="mt-6 flex justify-end">
-                      <button
-                        type="button"
-                        className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                        onClick={() => setSelectedService(null)}
-                      >
-                        {t("close")}
-                      </button>
-                    </div>
+                </div>
+                <div className="p-6">
+                  <div className="prose prose-lg max-w-none">
+                    {formatDescription(selectedService.description)}
                   </div>
-                </>
-              )}
+                  <div className="mt-6 flex justify-end">
+                    <button
+                      type="button"
+                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      onClick={() => setSelectedService(null)}
+                    >
+                      {t("close")}
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </Dialog>
+          </div>,
+          document.body
+        )}
     </SectionWrapper>
   );
 }
