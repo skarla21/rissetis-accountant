@@ -36,12 +36,18 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Force scroll to top on initial load only
-    if (typeof window !== "undefined") {
-      window.scrollTo(0, 0);
-    }
+    // Use setTimeout to delay the scroll to top slightly
+    // This ensures the page is fully rendered before scrolling
+    const timer = setTimeout(() => {
+      if (typeof window !== "undefined") {
+        window.scrollTo({
+          top: 0,
+          behavior: "auto", // Use 'auto' instead of 'smooth' to avoid visible scrolling
+        });
+      }
+    }, 100); // Small delay to let rendering complete
 
-    // No scroll event listeners to interfere with normal scrolling
+    return () => clearTimeout(timer);
   }, []);
 
   return (
