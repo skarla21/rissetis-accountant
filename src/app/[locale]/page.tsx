@@ -36,20 +36,20 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Prevent scroll on mount
-    document.body.style.overflow = "hidden";
-
-    // Force scroll to top
+    // Force scroll to top on mount
     window.scrollTo(0, 0);
 
-    // Re-enable scrolling after a short delay
-    const timer = setTimeout(() => {
-      document.body.style.overflow = "";
-    }, 100);
+    // Prevent any scroll position changes
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        window.scrollTo(0, 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      clearTimeout(timer);
-      document.body.style.overflow = "";
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
