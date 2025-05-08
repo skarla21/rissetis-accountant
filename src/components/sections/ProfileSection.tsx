@@ -20,7 +20,7 @@ export default function ProfileSection() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 2, ease: "easeIn" }}
             className="w-full h-full"
           >

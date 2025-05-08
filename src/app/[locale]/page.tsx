@@ -36,7 +36,21 @@ export default function Home() {
   };
 
   useEffect(() => {
+    // Prevent scroll on mount
+    document.body.style.overflow = "hidden";
+
+    // Force scroll to top
     window.scrollTo(0, 0);
+
+    // Re-enable scrolling after a short delay
+    const timer = setTimeout(() => {
+      document.body.style.overflow = "";
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = "";
+    };
   }, []);
 
   return (
