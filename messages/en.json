@@ -15,11 +15,26 @@
   },
   "services": {
     "title": "Our Services",
+    "description": "Our office, located in Pagkrati, is staffed by experienced, specialized internal partners committed to ensuring the interests of our clients. We offer a wide range of accounting and tax services, always with dedication, consistency, and efficiency. Additionally, we strive to provide our services at competitive prices to support every individual and business.",
+    "readMore": "Read More",
+    "close": "Close",
     "items": {
-      "bookkeeping": "Bookkeeping & Accounting",
-      "tax": "Tax Planning & Preparation",
-      "audit": "Audit & Assurance",
-      "consulting": "Financial Consulting"
+      "item1": {
+        "title": "FULL & SPECIALIZED ACCOUNTING SERVICES",
+        "description": "We undertake the organization, maintenance and supervision of the accounting department at your company's headquarters or at our office. If you choose the supervision of your accounting on your premises , our experienced partner will visit your business providing you with all the services required for the proper and efficient operation of your accounting. In addition, if you choose to keep in our office for your convenience and convenience, we take care of the transfer of invoices -from and to your business- for updating the books, as well as the processing of any kind of external work in public services (D.O.Y., I.K.A., O.A.E.E.).\n\nWe provide consulting services for the proper operation of your business.Our services concerning accounting issues are the following:\n•\tComputerized bookkeeping of all categories of books & preparation of accounting statements\n•\tIntroduction and monitoring of regulations (D.O.Y.) \n•\tEstablishment / Discontinuation of operations\n•\tCompany formation of domestic companies\n•\tExpense control and tax support"
+      },
+      "item2": {
+        "title": "CLOSE MONITORING OF TAX LIABILITIES",
+        "description": "We take responsibility for the careful monitoring and timely settlement of your tax obligations in accordance with the applicable deadlines and provisions. Our many years of experience is a guarantee for the prompt and valid resolution of all kinds of tax issues related to your business activity. In addition, we specialize in comprehensive support and mediation during tax audits by the respective auditing authority as well as in the tax management of real estate. Our provided services concerning tax issues are the following:\n•\tTax planning and strategy\n•\tPreparation for dealing with tax audits\n•\tTax optimization\n•\tDrafting, signing and submitting all tax returns\n•\tTax advice for covering documentation\n•\tInternal tax audit to identify possible problems"
+      },
+      "item3": {
+        "title": "VALID SUPPORT FOR LABOUR AND INSURANCE ISSUES",
+        "description": "Our accounting firm provides sound advice on all kinds of employment and insurance issues such as job subsidies, payroll, redundancy payments, labour inspection problems etc. In addition, we can undertake the resolution of tax disputes between partners, employer & employee, or with the government, as well as direct you to the best possible solution for labour issues, based on the current legislation. Our provided services concerning labour and insurance issues are the following:\n•\tCalculation, maintenance & computerization of payroll\n•\tCalculation of contributions and amounts payable\n•\tCompilation and submission of provisional and final tax returns. \n•\tSubmission of detailed periodic declarations (APA)\n•\tMonitoring of collective agreements\n•\tMonitoring of subsidized OAED programs and filing of supporting documents\n•\tPublishing of payroll statements & printing of detailed individual receipts of employees' earnings\n•\tManagement of recruitment, departures and interruptions of cooperation through ERGANI\n•\tConsulting on all kinds of labor and insurance issues"
+      },
+      "item4": {
+        "title": "EFFICIENT SERVICE OF THE NEEDS OF EACH INDIVIDUAL",
+        "description": "We consistently and effectively undertake to serve your every need, from the submission of your tax return and the timely settlement of your tax obligations to the settlement of unresolved tax and insurance issues in public services.\n\nDo not hesitate to contact us if you wish to be informed about the best possible way to approach and resolve any issue that concerns you. We offer the possibility of a free consultation at our office by appointment. Below you can see all our services provided to individuals.\n•\tSubmission of tax returns\n•\tApplications for benefits and allowances\n•\tTransfer processing to the I.O. Y of foreign residents\n•\tSubmission of leases - submission of lease expirations\n•\tMortgage leases\n•\tRepresentation and processing of bureaucratic work in public authorities\n•\tInheritance, parental benefits and donations\n•\tDouble taxation avoidance procedures\n•\tTaxation advice for covering presumptions and capital consumption"
+      }
     }
   },
   "articles": {
