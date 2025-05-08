@@ -2,18 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Always show scrollbar to prevent layout shifts */
-html {
-  overflow-y: scroll !important;
-}
-
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 255, 255, 255;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adds padding for fixed headers */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-end-rgb));
+  background: rgb(var(--background-rgb));
+  overflow-x: hidden;
 }

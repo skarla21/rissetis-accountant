@@ -19,8 +19,7 @@ export default function ProfileSection() {
         <AnimatePresence>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 2, ease: "easeIn" }}
             className="w-full h-full"
           >

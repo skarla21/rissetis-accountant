@@ -59,6 +59,28 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.onload = function() {
+              // Force scroll to top
+              window.scrollTo(0, 0);
+              
+              // Remove hash fragment from URL if it exists
+              if (window.location.hash) {
+                // Create a new URL without the hash
+                const newUrl = window.location.pathname + window.location.search;
+                
+                // Replace the current URL without reloading the page
+                window.history.replaceState(null, '', newUrl);
+              }
+            };
+            history.scrollRestoration = "manual";
+          `,
+          }}
+        />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}

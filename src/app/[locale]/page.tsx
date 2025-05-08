@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useSpring } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProfileSection from "@/components/sections/ProfileSection";
@@ -21,35 +21,6 @@ export default function Home() {
     restDelta: 0.001,
   });
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const navbarHeight = 80; // Adjust this value based on your navbar height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  useEffect(() => {
-    // Use setTimeout to delay the scroll to top slightly
-    // This ensures the page is fully rendered before scrolling
-    const timer = setTimeout(() => {
-      if (typeof window !== "undefined") {
-        window.scrollTo({
-          top: 0,
-          behavior: "auto", // Use 'auto' instead of 'smooth' to avoid visible scrolling
-        });
-      }
-    }, 100); // Small delay to let rendering complete
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div ref={containerRef} className="relative">
       {/* Progress bar */}
@@ -59,7 +30,7 @@ export default function Home() {
       />
 
       {/* Navigation */}
-      <Navbar scrollToSection={scrollToSection} />
+      <Navbar />
 
       {/* Main content */}
       <main>

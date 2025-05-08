@@ -8,11 +8,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-interface NavbarProps {
-  scrollToSection: (sectionId: string) => void;
-}
-
-export default function Navbar({ scrollToSection }: NavbarProps) {
+export default function Navbar() {
   const navigationText = useTranslations("navigation");
   const [activeSection, setActiveSection] = useState<string>("profile");
 
@@ -44,12 +40,12 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
   return (
     <>
       {/* Main Navbar - Hidden on mobile */}
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-40 hidden md:block">
+      <nav className="sticky top-0 left-0 right-0 bg-white shadow-md z-40 hidden md:block">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <motion.button
-              onClick={() => scrollToSection("profile")}
+            <motion.a
+              href="#profile"
               className="flex items-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -62,13 +58,13 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 className="object-contain"
                 priority
               />
-            </motion.button>
+            </motion.a>
 
             {/* Navigation Links */}
             <div className="flex justify-center space-x-8">
               <div className="relative group">
-                <button
-                  onClick={() => scrollToSection("profile")}
+                <a
+                  href="#profile"
                   className={`flex items-center space-x-2 ${
                     activeSection === "profile"
                       ? "text-blue-500"
@@ -77,7 +73,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 >
                   <FaUser />
                   <span>{navigationText("profile")}</span>
-                </button>
+                </a>
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
                     activeSection === "profile"
@@ -87,8 +83,8 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 ></span>
               </div>
               <div className="relative group">
-                <button
-                  onClick={() => scrollToSection("services")}
+                <a
+                  href="#services"
                   className={`flex items-center space-x-2 ${
                     activeSection === "services"
                       ? "text-blue-500"
@@ -97,7 +93,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 >
                   <FaBriefcase />
                   <span>{navigationText("services")}</span>
-                </button>
+                </a>
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
                     activeSection === "services"
@@ -107,8 +103,8 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 ></span>
               </div>
               <div className="relative group">
-                <button
-                  onClick={() => scrollToSection("articles")}
+                <a
+                  href="#articles"
                   className={`flex items-center space-x-2 ${
                     activeSection === "articles"
                       ? "text-blue-500"
@@ -117,7 +113,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 >
                   <FaNewspaper />
                   <span>{navigationText("articles")}</span>
-                </button>
+                </a>
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
                     activeSection === "articles"
@@ -127,8 +123,8 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 ></span>
               </div>
               <div className="relative group">
-                <button
-                  onClick={() => scrollToSection("contact")}
+                <a
+                  href="#contact"
                   className={`flex items-center space-x-2 ${
                     activeSection === "contact"
                       ? "text-blue-500"
@@ -137,7 +133,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 >
                   <FaEnvelope />
                   <span>{navigationText("contact")}</span>
-                </button>
+                </a>
                 <span
                   className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
                     activeSection === "contact"
@@ -164,12 +160,12 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
       </nav>
 
       {/* Mobile Top Navbar - Logo and Right Section */}
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-40 md:hidden">
+      <nav className="sticky top-0 left-0 right-0 bg-white shadow-md z-40 md:hidden">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <motion.button
-              onClick={() => scrollToSection("profile")}
+            <motion.a
+              href="#profile"
               className="flex items-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -182,7 +178,7 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
                 className="object-contain"
                 priority
               />
-            </motion.button>
+            </motion.a>
 
             {/* Right section with Locale Switcher and Social Media */}
             <div className="flex space-x-8">
@@ -200,41 +196,41 @@ export default function Navbar({ scrollToSection }: NavbarProps) {
       </nav>
 
       {/* Mobile Navigation Links - Bottom Fixed */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-40">
+      <div className="md:hidden sticky bottom-0 left-0 right-0 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-40">
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-around items-center">
-            <button
-              onClick={() => scrollToSection("profile")}
+            <a
+              href="#profile"
               className={`flex flex-col items-center ${
                 activeSection === "profile" ? "text-blue-500" : "text-gray-600"
               }`}
             >
               <FaUser size={20} />
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
+            </a>
+            <a
+              href="#services"
               className={`flex flex-col items-center ${
                 activeSection === "services" ? "text-blue-500" : "text-gray-600"
               }`}
             >
               <FaBriefcase size={20} />
-            </button>
-            <button
-              onClick={() => scrollToSection("articles")}
+            </a>
+            <a
+              href="#articles"
               className={`flex flex-col items-center ${
                 activeSection === "articles" ? "text-blue-500" : "text-gray-600"
               }`}
             >
               <FaNewspaper size={20} />
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
+            </a>
+            <a
+              href="#contact"
               className={`flex flex-col items-center ${
                 activeSection === "contact" ? "text-blue-500" : "text-gray-600"
               }`}
             >
               <FaEnvelope size={20} />
-            </button>
+            </a>
           </div>
         </div>
       </div>
