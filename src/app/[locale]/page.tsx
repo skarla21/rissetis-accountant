@@ -36,21 +36,12 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Force scroll to top on mount
-    window.scrollTo(0, 0);
+    // Force scroll to top on initial load only
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
 
-    // Prevent any scroll position changes
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        window.scrollTo(0, 0);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    // No scroll event listeners to interfere with normal scrolling
   }, []);
 
   return (
