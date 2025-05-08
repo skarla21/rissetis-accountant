@@ -12,7 +12,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Λογιστικά Ρισσέτης",
-  metadataBase: new URL("https://logistika-rissetis.vercel.app"), //change this
+  metadataBase: new URL("https://www.giorgosrissetis.gr"),
   icons: {
     icon: [
       {

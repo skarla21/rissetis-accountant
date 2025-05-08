@@ -3,6 +3,8 @@
 import { useTranslations } from "next-intl";
 import SectionWrapper from "@/components/SectionWrapper";
 import Image from "next/image";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProfileSection() {
   const t = useTranslations();
@@ -14,15 +16,25 @@ export default function ProfileSection() {
       className="relative min-h-screen"
     >
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/assets/imgs/rissetis_bg.jpg"
-          alt="Background"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-          quality={100}
-        />
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 2, ease: "easeIn" }}
+            className="w-full h-full"
+          >
+            <Image
+              src="/assets/imgs/rissetis_bg.jpg"
+              alt="Background"
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+              quality={100}
+            />
+          </motion.div>
+        </AnimatePresence>
         <div className="absolute inset-0 bg-white/80" />
       </div>
 
