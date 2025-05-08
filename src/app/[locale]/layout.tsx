@@ -12,7 +12,21 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Λογιστικά Ρισσέτης",
+  description:
+    "Λογιστικά Ρισσέτης - Επαγγελματικές λογιστικές υπηρεσίες στο Παγκράτι. Φοροτεχνικές συμβουλές, μισθοδοσία και πλήρεις λογιστικές υπηρεσίες για επιχειρήσεις και ιδιώτες.",
   metadataBase: new URL("https://www.giorgosrissetis.gr"),
+  alternates: {
+    canonical: "https://www.giorgosrissetis.gr",
+  },
+  keywords: [
+    "λογιστικά ρισσέτης",
+    "λογιστής παγκράτι",
+    "λογιστικές υπηρεσίες",
+    "φοροτεχνικά",
+    "μισθοδοσία",
+    "Ρισσέτης",
+    "λογιστήριο αθήνα",
+  ],
   icons: {
     icon: [
       {
@@ -26,11 +40,16 @@ export const metadata: Metadata = {
     type: "website",
     title: "Λογιστικά Ρισσέτης",
     siteName: "Λογιστικά Ρισσέτης",
+    description:
+      "Εξειδικευμένες λογιστικές και φοροτεχνικές υπηρεσίες από τον Γιώργο Ρισσέτη στο Παγκράτι. Πλήρης υποστήριξη για επιχειρήσεις και ιδιώτες.",
+    url: "https://www.giorgosrissetis.gr",
+    locale: "el_GR",
     images: [
       {
         url: "/assets/imgs/rissetis.jpg",
         width: 1181,
         height: 709,
+        alt: "Λογιστικά Ρισσέτης",
       },
     ],
   },
@@ -78,6 +97,46 @@ export default async function LocaleLayout({
             };
             history.scrollRestoration = "manual";
           `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AccountingService",
+              name: "Λογιστικά Ρισσέτης",
+              description:
+                "Επαγγελματικές λογιστικές υπηρεσίες στο Παγκράτι. Φοροτεχνικές συμβουλές, μισθοδοσία και πλήρεις λογιστικές υπηρεσίες για επιχειρήσεις και ιδιώτες.",
+              url: "https://www.giorgosrissetis.gr",
+              logo: "https://www.giorgosrissetis.gr/assets/imgs/rissetis_logo.png",
+              image: "https://www.giorgosrissetis.gr/assets/imgs/rissetis.jpg",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Αρτοτίνης 21",
+                addressLocality: "Παγκράτι",
+                postalCode: "116 33",
+                addressRegion: "Αθήνα",
+                addressCountry: "GR",
+              },
+              telephone: "+306982558553",
+              email: "logistikarissetis@gmail.com",
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                  ],
+                  opens: "09:00",
+                  closes: "17:00",
+                },
+              ],
+              priceRange: "$$",
+            }),
           }}
         />
       </head>
