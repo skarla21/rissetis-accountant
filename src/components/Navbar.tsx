@@ -196,7 +196,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Navigation Links - Bottom Fixed */}
-      <div className="md:hidden sticky bottom-0 left-0 right-0 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-40">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-40">
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-around items-center">
             <a

@@ -82,20 +82,10 @@ export default async function LocaleLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            window.onload = function() {
-              // Force scroll to top
-              window.scrollTo(0, 0);
-              
-              // Remove hash fragment from URL if it exists
-              if (window.location.hash) {
-                // Create a new URL without the hash
-                const newUrl = window.location.pathname + window.location.search;
-                
-                // Replace the current URL without reloading the page
-                window.history.replaceState(null, '', newUrl);
-              }
-            };
-            history.scrollRestoration = "manual";
+            // Set scroll restoration to auto to maintain position on refresh
+            if ('scrollRestoration' in history) {
+              history.scrollRestoration = 'auto';
+            }
           `,
           }}
         />
