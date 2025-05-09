@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Dialog } from "@headlessui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoChevronForward } from "react-icons/io5";
 import SectionWrapper from "@/components/SectionWrapper";
 import { createPortal } from "react-dom";
@@ -18,6 +18,18 @@ export default function ServicesSection() {
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(
     null
   );
+
+  useEffect(() => {
+    if (selectedService) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedService]);
 
   const services = Object.entries(
     t.raw("items") as Record<string, ServiceItem>
@@ -84,8 +96,8 @@ export default function ServicesSection() {
             />
 
             {/* Dialog Container */}
-            <div className="fixed inset-0 pt-20 flex items-center justify-center p-4 overflow-y-auto">
-              <div className="relative w-full max-w-md md:max-w-2xl lg:max-w-4xl bg-white rounded-lg shadow-xl">
+            <div className="fixed inset-0 flex items-start justify-center p-4 overflow-y-auto pt-4 sm:pt-10 md:pt-20">
+              <div className="relative w-full max-w-md md:max-w-2xl lg:max-w-4xl bg-white rounded-lg shadow-xl my-4">
                 <div className="bg-gray-100 px-6 py-4">
                   <div className="text-2xl font-bold text-gray-900">
                     {selectedService.title}
