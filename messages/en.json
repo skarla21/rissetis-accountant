@@ -9,9 +9,12 @@
     "quote": "Your trust is our priority"
   },
   "profile": {
-    "title": "Professional Accountant",
+    "title": "Accounting Rissetis Georgios",
     "subtitle": "Your Trusted Financial Partner",
-    "description": "With a long experience in accounting and financial management, we provide comprehensive solutions for businesses and individuals."
+    "description": "With a long experience in accounting and financial management, we provide comprehensive solutions for businesses and individuals.",
+    "reviews": {
+      "title": "Google Reviews"
+    }
   },
   "services": {
     "title": "Our Services",

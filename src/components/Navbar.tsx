@@ -51,11 +51,11 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
             >
               <Image
-                src="/assets/imgs/rissetis_logo.png"
+                src="/assets/imgs/rissetis_modified.png"
                 alt="Rissetis Logo"
                 width={40}
                 height={40}
-                className="object-contain"
+                className="object-contain rounded-full"
                 priority
               />
             </motion.a>
@@ -171,11 +171,11 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
             >
               <Image
-                src="/assets/imgs/rissetis_logo.png"
+                src="/assets/imgs/rissetis_modified.png"
                 alt="Rissetis Logo"
                 width={40}
                 height={40}
-                className="object-contain"
+                className="object-contain rounded-full"
                 priority
               />
             </motion.a>

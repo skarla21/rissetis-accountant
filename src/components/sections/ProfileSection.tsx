@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionWrapper from "@/components/SectionWrapper";
+import Reviews from "@/components/Reviews";
 import {
   FaCalculator,
   FaFileInvoiceDollar,
@@ -18,22 +19,8 @@ export default function ProfileSection() {
 
   return (
     <SectionWrapper id="profile" bgColor="gray" className="relative" fullWidth>
-      {/* Original background image - only visible on 2xl screens */}
-      <div className="absolute inset-0 w-full h-full hidden 2xl:block">
-        <Image
-          src="/assets/imgs/rissetis_bg.jpg"
-          alt="Background"
-          fill
-          className="object-cover"
-          sizes="(min-width: 1536px) 100vw, 0px"
-          priority
-          quality={100}
-        />
-        <div className="absolute inset-0 bg-white/80" />
-      </div>
-
-      {/* Styled background for smaller screens - subtle accounting-themed pattern */}
-      <div className="absolute inset-0 w-full h-full 2xl:hidden">
+      {/* Background with subtle pattern - visible on all screens */}
+      <div className="absolute inset-0 w-full h-full">
         <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100">
           {/* Subtle grid pattern overlay */}
           <div
@@ -75,38 +62,57 @@ export default function ProfileSection() {
         </div>
       </div>
 
-      {/* Content with position relative to allow absolute positioning */}
-      <div className="container mx-auto px-4 py-16 relative z-10 min-h-screen">
+      {/* Main content with animations */}
+      <div className="relative z-10 container mx-auto px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
         >
-          {/* Title and subtitle at the top */}
-          <div className="mt-16">
-            <h1 className="text-4xl font-bold mb-4 text-gray-900">
-              {t("profile.title")}
-            </h1>
-            <h2 className="text-2xl text-gray-700 mb-6">
-              {t("profile.subtitle")}
-            </h2>
-          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            {t("profile.title")}
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600">
+            {t("profile.subtitle")}
+          </p>
         </motion.div>
 
-        {/* Description absolutely positioned from the bottom */}
-        <div className="absolute bottom-40 left-0 right-0 text-center">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-gray-800 max-w-2xl mx-auto"
-            viewport={{ once: true }}
-          >
-            <i>{t("profile.description")}</i>
-          </motion.p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex justify-center mb-12"
+        >
+          <Image
+            src="/assets/imgs/rissetis_modified.png"
+            alt="Rissetis Logo"
+            width={200}
+            height={200}
+            className="object-contain rounded-full"
+            priority
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="max-w-3xl mx-auto text-center mb-16"
+        >
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            {t("profile.description")}
+          </p>
+        </motion.div>
+
+        {/* Reviews Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+        >
+          <Reviews />
+        </motion.div>
       </div>
     </SectionWrapper>
   );
