@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.giorgosrissetis.gr",
   },
+  verification: {
+    google: "mG5kOuSZQYY10SqZFgvxdSHnEcw6DK4WEJaQ3vWdLNY",
+  },
   keywords: [
     "λογιστικά ρισσέτης",
     "λογιστής παγκράτι",
