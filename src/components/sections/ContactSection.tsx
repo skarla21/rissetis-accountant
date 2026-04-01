@@ -19,7 +19,7 @@ export default function ContactSection() {
             <Iframe
               className="w-full h-full border-0"
               loading="lazy"
-              url={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJhbmDj2e9oRQRBcSBWjgUQVY&key=${process.env.NEXT_PUBLIC_MAPS_API_KEY}&zoom=15`}
+              url={`https://www.google.com/maps/embed/v1/place?q=37.9666549,23.7525564&key=${process.env.NEXT_PUBLIC_MAPS_API_KEY}&zoom=17`}
             ></Iframe>
           </div>
           {/* first col about contact and hours */}
@@ -31,7 +31,7 @@ export default function ContactSection() {
               <CiMapPin />
               <span className="mr-2 text-rissetis">
                 <a
-                  href="https://maps.app.goo.gl/TzY8e8555q7EZHLD9"
+                  href={contactText("address-maps-url")}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                   className="hover:underline"
@@ -43,8 +43,8 @@ export default function ContactSection() {
             <p className="flex items-center space-x-2">
               <CiPhone />
               <span className="text-rissetis">
-                <a href="tel:+306982558553" className="hover:underline">
-                  6982558553
+                <a href="tel:+302130068883" className="hover:underline">
+                  213 006 8883
                 </a>
               </span>
             </p>
@@ -65,29 +65,19 @@ export default function ContactSection() {
             <div className="space-y-2 text-gray-600">
               <div className="grid grid-cols-[max-content_1fr] gap-x-4 text-left">
                 <span>{contactText("monday")}</span>
-                <span>
-                  9:00 {contactText("am")} - 5:00 {contactText("pm")}
-                </span>
+                <span>{contactText("hours-monday")}</span>
                 <span>{contactText("tuesday")}</span>
-                <span>
-                  9:00 {contactText("am")} - 5:00 {contactText("pm")}
-                </span>
+                <span>{contactText("hours-tuesday")}</span>
                 <span>{contactText("wednesday")}</span>
-                <span>
-                  9:00 {contactText("am")} - 5:00 {contactText("pm")}
-                </span>
+                <span>{contactText("hours-wednesday")}</span>
                 <span>{contactText("thursday")}</span>
-                <span>
-                  9:00 {contactText("am")} - 5:00 {contactText("pm")}
-                </span>
+                <span>{contactText("hours-thursday")}</span>
                 <span>{contactText("friday")}</span>
-                <span>
-                  9:00 {contactText("am")} - 5:00 {contactText("pm")}
-                </span>
+                <span>{contactText("hours-friday")}</span>
                 <span>{contactText("saturday")}</span>
-                <span>{contactText("closed")}</span>
+                <span>{contactText("hours-saturday")}</span>
                 <span>{contactText("sunday")}</span>
-                <span>{contactText("closed")}</span>
+                <span>{contactText("hours-sunday")}</span>
               </div>
             </div>
           </div>

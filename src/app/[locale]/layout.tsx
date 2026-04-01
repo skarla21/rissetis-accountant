@@ -63,9 +63,9 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
 
   // Simple check if locale is valid
   if (locale !== "en" && locale !== "el") {
@@ -106,26 +106,62 @@ export default async function LocaleLayout({
               image: "https://www.giorgosrissetis.gr/assets/imgs/rissetis.jpg",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Αρτοτίνης 21",
+                streetAddress: "Φιλολάου 27 και Τιμοθέου",
                 addressLocality: "Παγκράτι",
                 postalCode: "116 33",
                 addressRegion: "Αθήνα",
                 addressCountry: "GR",
               },
-              telephone: "+306982558553",
+              telephone: "+302130068883",
               email: "logistikarissetis@gmail.com",
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                  ],
+                  dayOfWeek: "Monday",
                   opens: "09:00",
                   closes: "17:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Wednesday",
+                  opens: "09:00",
+                  closes: "17:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Tuesday",
+                  opens: "09:00",
+                  closes: "14:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Tuesday",
+                  opens: "17:00",
+                  closes: "20:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Thursday",
+                  opens: "09:00",
+                  closes: "14:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Thursday",
+                  opens: "17:00",
+                  closes: "20:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Friday",
+                  opens: "09:00",
+                  closes: "14:00",
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: "Friday",
+                  opens: "17:00",
+                  closes: "20:00",
                 },
               ],
               priceRange: "$$",
