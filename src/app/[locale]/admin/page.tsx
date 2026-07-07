@@ -69,8 +69,9 @@ export default function AdminPage() {
     }
 
     setIsLoading(true);
+    const addedUrl = newUrl;
     const result = await addArticleUrl(
-      newUrl,
+      addedUrl,
       password,
       t("admin.messages.invalidPassword"),
       t("admin.messages.urlAdded"),
@@ -79,7 +80,15 @@ export default function AdminPage() {
     if (result.success) {
       toast.success(result.message);
       setNewUrl("");
-      loadArticles();
+      // Optimistically show the new article right away. The GitHub-backed list can
+      // lag a few seconds just after the commit, so we update from what we know was
+      // added rather than re-reading (which could momentarily drop it again).
+      const metadata = await getArticleMetadata(addedUrl, t("articles.altTitle"));
+      setArticles((prev) =>
+        prev.some((a) => a.url === addedUrl)
+          ? prev
+          : [{ url: addedUrl, ...metadata }, ...prev]
+      );
     } else {
       toast.error(result.message);
     }
@@ -102,7 +111,8 @@ export default function AdminPage() {
     );
     if (result.success) {
       toast.success(result.message);
-      loadArticles();
+      // Optimistically drop it from the list (see note in handleAddUrl).
+      setArticles((prev) => prev.filter((a) => a.url !== url));
     } else {
       toast.error(result.message);
     }
@@ -113,7 +123,7 @@ export default function AdminPage() {
     <div className="container mx-auto px-4 py-8">
       <ToastContainer
         position="top-right"
-        autoClose={3000}
+        autoClose={6000}
         hideProgressBar={false}
         newestOnTop
         closeOnClick

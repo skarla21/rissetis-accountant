@@ -1,7 +1,9 @@
 // Git-backed storage for the article URL list. The file lives in the repo and is
 // the single source of truth: the public site reads the build-bundled copy
 // (imported directly in ArticlesSection), while admin writes commit to it through
-// the GitHub Contents API, which triggers a Vercel redeploy.
+// the GitHub Contents API and then fire a Vercel Deploy Hook so the public site is
+// rebuilt with the new list (a commit made via the API does not reliably trigger
+// Vercel's own git-push build).
 
 const OWNER = "skarla21";
 const REPO = "rissetis-accountant";
@@ -85,6 +87,7 @@ export async function commitArticles(
     });
 
     if (response.ok) {
+      await triggerDeploy();
       return;
     }
 
@@ -97,5 +100,29 @@ export async function commitArticles(
     throw new Error(
       `GitHub write failed: ${response.status} ${await response.text()}`
     );
+  }
+}
+
+/**
+ * Best-effort trigger of a Vercel production rebuild after a commit, so the public
+ * site (which serves the build-bundled copy of the list) picks up the change.
+ * A commit made through the GitHub API does not reliably fire Vercel's git-push
+ * build, so we POST to a Deploy Hook explicitly. No-op if the hook is not
+ * configured (e.g. local dev); never throws — the commit has already succeeded, so
+ * a failed rebuild trigger must not turn a successful save into an error.
+ */
+async function triggerDeploy(): Promise<void> {
+  const hook = process.env.VERCEL_DEPLOY_HOOK_URL;
+  if (!hook) {
+    console.warn("VERCEL_DEPLOY_HOOK_URL not set; skipping deploy trigger.");
+    return;
+  }
+  try {
+    const res = await fetch(hook, { method: "POST" });
+    if (!res.ok) {
+      console.error(`Deploy hook returned ${res.status}`);
+    }
+  } catch (err) {
+    console.error("Failed to trigger Vercel deploy hook:", err);
   }
 }
