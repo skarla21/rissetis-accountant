@@ -12,7 +12,7 @@ export default function SocialMedia() {
         <FaFacebook size={24} />
       </a>
       <a
-        href="https://www.instagram.com/george.risse/"
+        href="https://www.instagram.com/george_rissetis/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-600 transition-colors hover:text-[#E1306C]"
