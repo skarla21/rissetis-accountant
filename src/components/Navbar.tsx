@@ -51,7 +51,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
             >
               <Image
-                src="/assets/imgs/rissetis_modified.png"
+                src="/assets/imgs/RissetisOnlyLogoSocialTransp.png"
                 alt="Rissetis Logo"
                 width={40}
                 height={40}
@@ -171,7 +171,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
             >
               <Image
-                src="/assets/imgs/rissetis_modified.png"
+                src="/assets/imgs/RissetisOnlyLogoSocialTransp.png"
                 alt="Rissetis Logo"
                 width={40}
                 height={40}

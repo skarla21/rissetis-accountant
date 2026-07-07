@@ -1,9 +1,20 @@
 "use server";
 
-import { supabase } from "@/lib/supabase";
-import { TaxArticle } from "@/types/articles";
+import { readArticlesFromGitHub, commitArticles } from "@/lib/articlesRepo";
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+/**
+ * Admin read path: reads live from GitHub so the admin UI reflects its own edits
+ * immediately (the build-bundled copy the public site serves stays stale on the
+ * running deployment until the commit-triggered redeploy finishes). Admin is
+ * low-traffic, so the API call is fine here. Errors propagate to the caller so a
+ * misconfigured token surfaces as a load error instead of an empty list.
+ */
+export async function getAdminArticleUrls(): Promise<string[]> {
+  const { urls } = await readArticlesFromGitHub();
+  return urls;
+}
 
 export async function addArticleUrl(
   url: string,
@@ -17,12 +28,10 @@ export async function addArticleUrl(
   }
 
   try {
-    const { error } = await supabase
-      .from("articles")
-      .insert([{ url }])
-      .select();
-
-    if (error) throw error;
+    await commitArticles(
+      (urls) => (urls.includes(url) ? urls : [...urls, url]),
+      `Add article: ${url}`
+    );
     return { success: true, message: successMsg };
   } catch (error) {
     console.error("Error adding URL:", error);
@@ -42,24 +51,13 @@ export async function removeArticleUrl(
   }
 
   try {
-    const { error } = await supabase.from("articles").delete().eq("url", url);
-
-    if (error) throw error;
+    await commitArticles(
+      (urls) => urls.filter((u) => u !== url),
+      `Remove article: ${url}`
+    );
     return { success: true, message: successMsg };
   } catch (error) {
     console.error("Error removing URL:", error);
     return { success: false, message: errorMsg };
-  }
-}
-
-export async function getAllArticleUrls(): Promise<string[]> {
-  try {
-    const { data, error } = await supabase.from("articles").select("url");
-
-    if (error) throw error;
-    return (data as TaxArticle[]).map((item) => item.url);
-  } catch (error) {
-    console.error("Error fetching URLs:", error);
-    return [];
   }
 }

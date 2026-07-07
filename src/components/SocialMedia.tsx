@@ -4,7 +4,7 @@ export default function SocialMedia() {
   return (
     <>
       <a
-        href="https://www.facebook.com/profile.php?id=100088632974282"
+        href="https://www.facebook.com/share/1Ln9RtP2uG/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-600 hover:text-blue-600 transition-colors"
@@ -12,7 +12,7 @@ export default function SocialMedia() {
         <FaFacebook size={24} />
       </a>
       <a
-        href="https://www.instagram.com/george.risse/#"
+        href="https://www.instagram.com/george.risse/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-gray-600 transition-colors hover:text-[#E1306C]"

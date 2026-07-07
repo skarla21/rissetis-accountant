@@ -64,21 +64,10 @@ export default function ContactSection() {
             </h3>
             <div className="space-y-2 text-gray-600">
               <div className="grid grid-cols-[max-content_1fr] gap-x-4 text-left">
-                <span>{contactText("monday")}</span>
-                <span>{contactText("hours-monday")}</span>
-                <span>{contactText("tuesday")}</span>
-                <span>{contactText("hours-tuesday")}</span>
-                <span>{contactText("wednesday")}</span>
-                <span>{contactText("hours-wednesday")}</span>
-                <span>{contactText("thursday")}</span>
-                <span>{contactText("hours-thursday")}</span>
-                <span>{contactText("friday")}</span>
-                <span>{contactText("hours-friday")}</span>
-                <span>{contactText("saturday")}</span>
-                <span>{contactText("hours-saturday")}</span>
-                <span>{contactText("sunday")}</span>
-                <span>{contactText("hours-sunday")}</span>
+                <span>{contactText("hours-days")}</span>
+                <span>{contactText("hours-time")}</span>
               </div>
+              <p>{contactText("hours-appointment")}</p>
             </div>
           </div>
         </div>

@@ -85,7 +85,7 @@ export default function ProfileSection() {
           className="flex justify-center mb-12"
         >
           <Image
-            src="/assets/imgs/rissetis_modified.png"
+            src="/assets/imgs/RissetisOnlyLogoSocialTransp.png"
             alt="Rissetis Logo"
             width={200}
             height={200}

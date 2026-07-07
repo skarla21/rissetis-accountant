@@ -10,6 +10,9 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+// Weekdays the office is open, shared by both openingHoursSpecification entries.
+const WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+
 export const metadata: Metadata = {
   title: "Λογιστικά Ρισσέτης",
   description:
@@ -33,9 +36,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/assets/imgs/rissetis_logo.png",
+        url: "/assets/imgs/RissetisOnlyLogoSocialTransp.png",
         type: "image/png",
-        sizes: "192x192",
+        sizes: "591x591",
       },
     ],
   },
@@ -49,9 +52,9 @@ export const metadata: Metadata = {
     locale: "el_GR",
     images: [
       {
-        url: "/assets/imgs/rissetis.jpg",
-        width: 1181,
-        height: 709,
+        url: "/assets/imgs/Rissetis_Social Logo Name Circle.png",
+        width: 591,
+        height: 591,
         alt: "Λογιστικά Ρισσέτης",
       },
     ],
@@ -102,8 +105,9 @@ export default async function LocaleLayout({
               description:
                 "Επαγγελματικές λογιστικές υπηρεσίες στο Παγκράτι. Φοροτεχνικές συμβουλές, μισθοδοσία και πλήρεις λογιστικές υπηρεσίες για επιχειρήσεις και ιδιώτες.",
               url: "https://www.giorgosrissetis.gr",
-              logo: "https://www.giorgosrissetis.gr/assets/imgs/rissetis_logo.png",
-              image: "https://www.giorgosrissetis.gr/assets/imgs/rissetis.jpg",
+              logo: "https://www.giorgosrissetis.gr/assets/imgs/RissetisOnlyLogoSocialTransp.png",
+              image:
+                "https://www.giorgosrissetis.gr/assets/imgs/Rissetis_Social%20Logo%20Name%20Circle.png",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Φιλολάου 27 και Τιμοθέου",
@@ -117,49 +121,13 @@ export default async function LocaleLayout({
               openingHoursSpecification: [
                 {
                   "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Monday",
-                  opens: "09:00",
-                  closes: "17:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Wednesday",
-                  opens: "09:00",
-                  closes: "17:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Tuesday",
+                  dayOfWeek: WEEKDAYS,
                   opens: "09:00",
                   closes: "14:00",
                 },
                 {
                   "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Tuesday",
-                  opens: "17:00",
-                  closes: "20:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Thursday",
-                  opens: "09:00",
-                  closes: "14:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Thursday",
-                  opens: "17:00",
-                  closes: "20:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Friday",
-                  opens: "09:00",
-                  closes: "14:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Friday",
+                  dayOfWeek: WEEKDAYS,
                   opens: "17:00",
                   closes: "20:00",
                 },

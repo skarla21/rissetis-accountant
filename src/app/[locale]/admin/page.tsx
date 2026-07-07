@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import { IoHome } from "react-icons/io5";
+import { IoHome, IoInformationCircleOutline } from "react-icons/io5";
 import {
-  getAllArticleUrls,
+  getAdminArticleUrls,
   addArticleUrl,
   removeArticleUrl,
 } from "@/server/articleActions";
@@ -30,7 +30,7 @@ export default function AdminPage() {
 
   const loadArticles = async () => {
     try {
-      const urls = await getAllArticleUrls();
+      const urls = await getAdminArticleUrls();
       const metadataPromises = urls.map((url) =>
         getArticleMetadata(url, t("articles.altTitle"))
       );
@@ -133,6 +133,12 @@ export default function AdminPage() {
           <IoHome className="w-5 h-5" />
           <span>{t("admin.returnButton")}</span>
         </button>
+      </div>
+
+      {/* Deploy delay notice */}
+      <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 text-amber-800 p-4 rounded-lg mb-8">
+        <IoInformationCircleOutline className="w-6 h-6 flex-shrink-0 mt-0.5" />
+        <p className="text-sm">{t("admin.deployNotice")}</p>
       </div>
 
       {/* Password Section */}

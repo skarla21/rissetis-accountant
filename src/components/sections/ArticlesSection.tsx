@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
 import { useEffect, useState } from "react";
-import { getAllArticleUrls } from "@/server/articleActions";
+import articleUrls from "@/data/articles.json";
 import { getArticleMetadata } from "@/lib/metadata";
 import { ArticleMetadata, TaxArticle } from "@/types/articles";
 
@@ -21,8 +21,8 @@ export default function ArticlesSection() {
     const fetchArticles = async () => {
       try {
         setIsLoading(true);
-        // Get all URLs from Supabase
-        const urls = await getAllArticleUrls();
+        // URLs come straight from the build-bundled article list (no round-trip).
+        const urls = articleUrls;
 
         // Create an array of promises for metadata fetching
 

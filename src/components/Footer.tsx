@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import SocialMedia from "./SocialMedia";
 
 export default function Footer() {
   const footerText = useTranslations("footer");
@@ -11,10 +12,10 @@ export default function Footer() {
         <div className="flex flex-col items-center space-y-6">
           {/* Logo */}
           <Image
-            src="/assets/imgs/rissetis_logo.png"
+            src="/assets/imgs/Rissetis_Email Logo Horizontal.png"
             alt="Rissetis Logo"
-            width={60}
-            height={60}
+            width={200}
+            height={44}
             className="object-contain"
             priority
           />
@@ -23,6 +24,14 @@ export default function Footer() {
           <p className="text-gray-600 text-center italic max-w-2xl">
             {footerText("quote")}
           </p>
+
+          {/* Follow us on social media */}
+          <div className="flex flex-col items-center space-y-3">
+            <p className="text-gray-600 text-center">{footerText("follow")}</p>
+            <div className="flex space-x-4">
+              <SocialMedia />
+            </div>
+          </div>
 
           {/* Copyright and Credits */}
           <div className="text-center text-gray-500 text-sm">
