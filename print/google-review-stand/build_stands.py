@@ -7,13 +7,16 @@ import base64
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+PROJECT = ROOT.parent.parent
 REVIEW_URL = (
     "https://search.google.com/local/writereview?placeid=ChIJedN8cI4Im64RY0dn1WN8sLA"
 )
 QR_PATH = ROOT / "qr-review.png"
+LOGO_PATH = PROJECT / "public" / "assets" / "imgs" / "RissetisOnlyLogoSocialTransp.png"
 
+# Slightly inset viewBox so the G stroke isn't clipped by SVG edge rounding
 GOOGLE_G_SVG = """
-<svg class="google-g" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<svg class="google-g" viewBox="-1 -1 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" overflow="visible">
   <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
   <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
   <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
@@ -72,7 +75,7 @@ html, body {
 .stand {
   width: 100mm;
   height: 150mm;
-  padding: 8mm 0 0;
+  padding: 5mm 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,42 +97,92 @@ html, body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  flex: 1 1 auto;
-  min-height: 0;
+  flex: 0 0 auto;
   justify-content: flex-start;
   padding-top: 1mm;
 }
-.stand-inner .actions {
-  margin-top: auto;
+.stand-inner .footer-spacer {
+  flex: 1 1 auto;
+  min-height: 2mm;
+}
+.firm-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4mm;
+  margin-bottom: 3mm;
+  width: 100%;
+  flex-shrink: 0;
+}
+.firm-logo {
+  width: 12mm;
+  height: 12mm;
+  display: block;
+  object-fit: contain;
+}
+.firm-name {
+  text-align: center;
+  font-size: 3.4mm;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1A6FB5;
+  line-height: 1.15;
+}
+.firm-tagline {
+  text-align: center;
+  font-size: 2mm;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4AA8B5;
+  line-height: 1;
+  margin-top: -0.2mm;
 }
 .brand-stack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
-  gap: 3.2mm;
+  gap: 3.5mm;
 }
 .headline {
   text-align: center;
-  font-size: 5.2mm;
+  font-size: 4.6mm;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  margin-bottom: 5.5mm;
+  margin-bottom: 3mm;
   width: 100%;
 }
-.google-g { width: 18mm; height: 18mm; display: block; flex-shrink: 0; }
-.stars { width: 32mm; height: 5.8mm; display: block; flex-shrink: 0; }
+.google-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5mm;
+  flex-shrink: 0;
+  overflow: visible;
+  padding: 0.8mm 0;
+}
+.google-g {
+  width: 11mm;
+  height: 11mm;
+  display: block;
+  flex-shrink: 0;
+  overflow: visible;
+}
+.stars { width: 30mm; height: 5.2mm; display: block; flex-shrink: 0; }
 .qr-wrap {
   position: relative;
-  width: 52mm;
-  height: 52mm;
+  width: 50mm;
+  height: 50mm;
   display: grid;
   place-items: center;
   flex-shrink: 0;
 }
-.qr-wrap img { width: 44mm; height: 44mm; display: block; }
+.qr-wrap img { width: 42mm; height: 42mm; display: block; }
 .corner {
   position: absolute;
   width: 7mm;
@@ -142,9 +195,9 @@ html, body {
 .corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
 .actions {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 5mm;
+  gap: 6mm;
   width: 100%;
   padding: 4mm 0 5mm;
   flex: 0 0 auto;
@@ -153,15 +206,19 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 34mm;
+  width: 32mm;
   text-align: center;
   position: relative;
 }
-.action-label { font-size: 3.4mm; font-weight: 600; margin-bottom: 1.5mm; }
-.or { align-self: center; font-size: 3.4mm; color: #555; padding-top: 9mm; }
+.or {
+  align-self: center;
+  font-size: 3.6mm;
+  color: #555;
+  padding-top: 0;
+}
 .nfc-mark {
-  width: 28mm;
-  height: 28mm;
+  width: 26mm;
+  height: 26mm;
   border-radius: 50%;
   border: 1.8px dashed #4285F4;
   background: rgba(66,133,244,0.04);
@@ -170,8 +227,8 @@ html, body {
   justify-content: center;
   position: relative;
 }
-.nfc-hint {
-  margin-top: 1.5mm;
+.action-hint {
+  margin-top: 1.8mm;
   white-space: nowrap;
   font-size: 2mm;
   color: #4285F4;
@@ -180,13 +237,13 @@ html, body {
   line-height: 1;
 }
 .scan-mark {
-  width: 28mm;
-  height: 28mm;
+  width: 26mm;
+  height: 26mm;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.action-icon { width: 18mm; height: 18mm; }
+.action-icon { width: 16mm; height: 16mm; }
 .footer-stripe {
   width: 100%;
   height: 4mm;
@@ -203,12 +260,12 @@ html, body {
 """
 
 
-def qr_data_uri() -> str:
-    data = base64.b64encode(QR_PATH.read_bytes()).decode("ascii")
+def data_uri(path: Path) -> str:
+    data = base64.b64encode(path.read_bytes()).decode("ascii")
     return f"data:image/png;base64,{data}"
 
 
-def document(qr_uri: str) -> str:
+def document(qr_uri: str, logo_uri: str) -> str:
     return f"""<!DOCTYPE html>
 <html lang="el">
 <head>
@@ -220,10 +277,17 @@ def document(qr_uri: str) -> str:
 <div class="stand">
   <div class="stand-inner">
     <div class="top-block">
+      <div class="firm-brand">
+        <img class="firm-logo" src="{logo_uri}" alt="Ρισσέτης" />
+        <div class="firm-name">Ρισσέτης Γεώργιος</div>
+        <div class="firm-tagline">Φοροτεχνικές Υπηρεσίες</div>
+      </div>
       <h1 class="headline">Πείτε μας τη γνώμη σας</h1>
       <div class="brand-stack">
-        {GOOGLE_G_SVG}
-        {STARS_SVG}
+        <div class="google-row">
+          {GOOGLE_G_SVG}
+          {STARS_SVG}
+        </div>
         <div class="qr-wrap" aria-label="QR code">
           <span class="corner tl"></span>
           <span class="corner tr"></span>
@@ -235,16 +299,16 @@ def document(qr_uri: str) -> str:
     </div>
     <div class="actions">
       <div class="action tap">
-        <div class="action-label">Ακουμπήστε</div>
         <div class="nfc-mark">{TAP_ICON}</div>
-        <div class="nfc-hint">πέρασε το NFC εδώ</div>
+        <div class="action-hint">πέρασε το NFC εδώ</div>
       </div>
       <div class="or">ή</div>
       <div class="action scan">
-        <div class="action-label">Σαρώστε</div>
         <div class="scan-mark">{SCAN_ICON}</div>
+        <div class="action-hint">σκάναρε</div>
       </div>
     </div>
+    <div class="footer-spacer" aria-hidden="true"></div>
   </div>
   <div class="footer-stripe" aria-hidden="true">
     <span class="b"></span><span class="g"></span><span class="y"></span><span class="r"></span>
@@ -305,8 +369,13 @@ def export(html_path: Path) -> None:
 
 def main() -> None:
     ensure_qr()
+    if not LOGO_PATH.exists():
+        raise SystemExit(f"Missing logo: {LOGO_PATH}")
     html_path = ROOT / "rissetis-google-review-stand.html"
-    html_path.write_text(document(qr_data_uri()), encoding="utf-8")
+    html_path.write_text(
+        document(data_uri(QR_PATH), data_uri(LOGO_PATH)),
+        encoding="utf-8",
+    )
     export(html_path)
 
 
