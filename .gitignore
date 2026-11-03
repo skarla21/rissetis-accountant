@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 *.pem
+__pycache__/
+*.py[cod]
 
 # debug
 npm-debug.log*
@@ -36,6 +38,14 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# brainstorm visual companion
+.superpowers/
+
+# temp place-id lookup scraps
+.place*.html
+.gsearch.html
+.fb.html
 
 # typescript
 *.tsbuildinfo
