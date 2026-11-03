@@ -1,5 +1,6 @@
 "use server";
 
+import { isAllowedArticleUrl } from "@/lib/articleUrl";
 import { readArticlesFromGitHub, commitArticles } from "@/lib/articlesRepo";
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
@@ -21,10 +22,15 @@ export async function addArticleUrl(
   password: string,
   invalidPasswordMsg: string,
   successMsg: string,
-  errorMsg: string
+  errorMsg: string,
+  urlNotAllowedMsg: string
 ): Promise<{ success: boolean; message: string }> {
   if (password !== ADMIN_PASSWORD) {
     return { success: false, message: invalidPasswordMsg };
+  }
+
+  if (!isAllowedArticleUrl(url)) {
+    return { success: false, message: urlNotAllowedMsg };
   }
 
   try {

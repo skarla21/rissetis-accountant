@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export default function LocaleSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
-  const currentLocale = pathname.split("/")[1] || "en";
+  const currentLocale = pathname.split("/")[1] || "el";
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 

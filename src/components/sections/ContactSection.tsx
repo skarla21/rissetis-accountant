@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import Iframe from "react-iframe";
-import { CiMail, CiMapPin, CiPhone } from "react-icons/ci";
+import { CiMail, CiMapPin, CiMobile1, CiPhone } from "react-icons/ci";
 import ContactForm from "@/components/sections/ContactForm";
 import SectionWrapper from "@/components/SectionWrapper";
 
@@ -49,6 +49,14 @@ export default function ContactSection() {
               </span>
             </p>
             <p className="flex items-center space-x-2">
+              <CiMobile1 />
+              <span className="text-rissetis">
+                <a href="tel:+306982558553" className="hover:underline">
+                  698 255 8553
+                </a>
+              </span>
+            </p>
+            <p className="flex items-center space-x-2">
               <CiMail />
               <span className="text-rissetis">
                 <a
@@ -63,9 +71,18 @@ export default function ContactSection() {
               {contactText("hours-title")}
             </h3>
             <div className="space-y-2 text-gray-600">
-              <div className="grid grid-cols-[max-content_1fr] gap-x-4 text-left">
-                <span>{contactText("hours-days")}</span>
-                <span>{contactText("hours-time")}</span>
+              <div className="grid grid-cols-[7rem_1fr] gap-x-4 gap-y-1 text-left text-sm sm:text-base">
+                {(
+                  contactText.raw("hours-schedule") as {
+                    day: string;
+                    time: string;
+                  }[]
+                ).map((row) => (
+                  <div key={row.day} className="contents">
+                    <span className="font-medium text-gray-800">{row.day}</span>
+                    <span>{row.time}</span>
+                  </div>
+                ))}
               </div>
               <p>{contactText("hours-appointment")}</p>
             </div>

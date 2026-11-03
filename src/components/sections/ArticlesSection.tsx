@@ -5,74 +5,29 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import SectionWrapper from "@/components/SectionWrapper";
-import { useEffect, useState } from "react";
-import articleUrls from "@/data/articles.json";
-import { getArticleMetadata } from "@/lib/metadata";
-import { ArticleMetadata, TaxArticle } from "@/types/articles";
+import { articleDateToIso } from "@/lib/articleUrl";
+import type { ArticleMetadata, TaxArticle } from "@/types/articles";
 
-export default function ArticlesSection() {
+type ArticleCard = TaxArticle & ArticleMetadata;
+
+export default function ArticlesSection({
+  articles,
+}: {
+  articles: ArticleCard[];
+}) {
   const t = useTranslations("articles");
-  const [articles, setArticles] = useState<(TaxArticle & ArticleMetadata)[]>(
-    []
-  );
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        setIsLoading(true);
-        // URLs come straight from the build-bundled article list (no round-trip).
-        const urls = articleUrls;
-
-        // Create an array of promises for metadata fetching
-
-        const metadataPromises = urls.map((url) =>
-          getArticleMetadata(url, t("altTitle"))
-        );
-
-        // Wait for all metadata to be fetched in parallel
-        const metadataResults = await Promise.all(metadataPromises);
-
-        // Combine URLs with their metadata
-        const articlesWithMetadata = urls.map((url, index) => ({
-          url,
-          ...metadataResults[index],
-        }));
-
-        // Sort articles by date (latest first)
-        const sortedArticles = articlesWithMetadata.sort((a, b) => {
-          const [aMonth, aDay, aYear] = a.date.split(".").map(Number);
-          const [bMonth, bDay, bYear] = b.date.split(".").map(Number);
-          const dateA = new Date(aYear, aMonth - 1, aDay);
-          const dateB = new Date(bYear, bMonth - 1, bDay);
-          return dateB.getTime() - dateA.getTime();
-        });
-
-        setArticles(sortedArticles);
-      } catch (error) {
-        console.error("Error fetching articles:", error);
-        setArticles([]);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchArticles();
-  }, []);
 
   return (
     <SectionWrapper id="articles" bgColor="gray">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">{t("title")}</h2>
-        {isLoading ? (
-          <div className="text-center py-8">
-            <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-600 border-t-transparent"></div>
-          </div>
+        {articles.length === 0 ? (
+          <p className="text-center text-gray-500 py-8">{t("empty")}</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, index) => (
-              <motion.div
-                key={index}
+              <motion.article
+                key={article.url}
                 whileHover={{ scale: 1.02 }}
                 className="bg-white rounded-lg shadow-md overflow-hidden"
               >
@@ -84,12 +39,12 @@ export default function ArticlesSection() {
                   <div className="relative h-48 w-full">
                     <Image
                       src={article.imageUrl}
-                      alt={t("altTitle")}
+                      alt={article.title || t("altTitle")}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover"
                       quality={75}
-                      priority
+                      priority={index < 3}
                     />
                   </div>
                   <div className="p-6">
@@ -97,16 +52,19 @@ export default function ArticlesSection() {
                       {article.title}
                     </h3>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-500">
+                      <time
+                        className="text-sm text-gray-500"
+                        dateTime={articleDateToIso(article.date)}
+                      >
                         {article.date}
-                      </span>
+                      </time>
                       <span className="text-blue-600 hover:text-blue-800 transition-colors">
                         {t("readMore")} →
                       </span>
                     </div>
                   </div>
                 </Link>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         )}

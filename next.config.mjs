@@ -7,7 +7,16 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
+        protocol: "https",
         hostname: "www.taxheaven.gr",
+      },
+      {
+        protocol: "https",
+        hostname: "taxheaven.gr",
+      },
+      {
+        protocol: "https",
+        hostname: "www.gov.gr",
       },
     ],
   },

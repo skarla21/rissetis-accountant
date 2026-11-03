@@ -75,7 +75,8 @@ export default function AdminPage() {
       password,
       t("admin.messages.invalidPassword"),
       t("admin.messages.urlAdded"),
-      t("admin.messages.urlAddFailed")
+      t("admin.messages.urlAddFailed"),
+      t("admin.messages.urlNotAllowed")
     );
     if (result.success) {
       toast.success(result.message);

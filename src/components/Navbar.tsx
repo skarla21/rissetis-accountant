@@ -52,7 +52,7 @@ export default function Navbar() {
             >
               <Image
                 src="/assets/imgs/RissetisOnlyLogoSocialTransp.png"
-                alt="Rissetis Logo"
+                alt="Λογιστικά Ρισσέτης"
                 width={40}
                 height={40}
                 className="object-contain rounded-full"
@@ -172,7 +172,7 @@ export default function Navbar() {
             >
               <Image
                 src="/assets/imgs/RissetisOnlyLogoSocialTransp.png"
-                alt="Rissetis Logo"
+                alt="Λογιστικά Ρισσέτης"
                 width={40}
                 height={40}
                 className="object-contain rounded-full"

@@ -1,6 +1,9 @@
 # Allow all web crawlers
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /el/admin
+Disallow: /en/admin
 
 # Sitemap location
-Sitemap: https://www.giorgosrissetis.gr/sitemap.xml 
+Sitemap: https://www.giorgosrissetis.gr/sitemap.xml

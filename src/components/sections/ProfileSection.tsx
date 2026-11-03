@@ -86,7 +86,7 @@ export default function ProfileSection() {
         >
           <Image
             src="/assets/imgs/RissetisOnlyLogoSocialTransp.png"
-            alt="Rissetis Logo"
+            alt="Λογιστικά Ρισσέτης — λογιστικό γραφείο Παγκράτι"
             width={200}
             height={200}
             className="object-contain rounded-full"

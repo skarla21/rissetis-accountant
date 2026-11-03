@@ -10,9 +10,9 @@
     "follow": "For more updates, follow us on our office's social media"
   },
   "profile": {
-    "title": "Accounting Rissetis Georgios",
-    "subtitle": "Your Trusted Financial Partner",
-    "description": "With a long experience in accounting and financial management, we provide comprehensive solutions for businesses and individuals.",
+    "title": "Accountant in Pagkrati — Accounting Rissetis Georgios",
+    "subtitle": "Your trusted financial partner in Athens",
+    "description": "Accounting firm in Pagkrati with experience in accounting, tax services, and payroll. We provide complete solutions for businesses and individuals in Athens, with consistency and personal service.",
     "reviews": {
       "title": "Google Reviews"
     }
@@ -44,6 +44,7 @@
   "articles": {
     "title": "Latest Articles",
     "altTitle": "Tax Article",
+    "empty": "No articles available at the moment.",
     "readMore": "Read More"
   },
   "contact": {
@@ -52,9 +53,16 @@
     "address": "Filolaou 27 & Timotheou, 116 33, Athens, Greece",
     "address-maps-url": "https://www.google.com/maps/place/%CE%A6%CE%B9%CE%BB%CE%BF%CE%BB%CE%AC%CE%BF%CF%85+27,+%CE%91%CE%B8%CE%AE%CE%BD%CE%B1+116+33/@37.9666591,23.7499815,17z/data=!3m1!4b1!4m6!3m5!1s0x14a1bd67c66d02c9:0xd7fa32c2eb3a701!8m2!3d37.9666549!4d23.7525564!16s%2Fg%2F11snqw_5fr?entry=ttu&g_ep=EgoyMDI2MDMyOS4wIKXMDSoASAFQAw%3D%3D",
     "hours-title": "Working Hours",
-    "hours-days": "Monday to Friday",
-    "hours-time": "9:00 a.m. – 2:00 p.m. & 5:00 p.m. – 8:00 p.m.",
     "hours-appointment": "By appointment",
+    "hours-schedule": [
+      { "day": "Monday", "time": "9:00 a.m.–3:00 p.m." },
+      { "day": "Tuesday", "time": "9:00 a.m.–2:00 p.m. & 5:00–8:00 p.m." },
+      { "day": "Wednesday", "time": "9:00 a.m.–3:00 p.m." },
+      { "day": "Thursday", "time": "9:00 a.m.–2:00 p.m. & 5:00–8:00 p.m." },
+      { "day": "Friday", "time": "9:00 a.m.–2:00 p.m. & 5:00–8:00 p.m." },
+      { "day": "Saturday", "time": "Closed" },
+      { "day": "Sunday", "time": "Closed" }
+    ],
     "contact-form": {
       "message-title": "Send Us a Message",
       "message-name": "Your Name",
@@ -94,6 +102,7 @@
       "invalidPassword": "Invalid password",
       "urlAdded": "URL saved — it will appear on the public website in about 1–2 minutes.",
       "urlAddFailed": "Failed to add URL",
+      "urlNotAllowed": "Only taxheaven.gr or gov.gr article links are allowed",
       "urlRemoved": "URL removed — the public website will update in about 1–2 minutes.",
       "urlRemoveFailed": "Failed to remove URL"
     }

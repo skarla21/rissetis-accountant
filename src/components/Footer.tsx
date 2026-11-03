@@ -13,7 +13,7 @@ export default function Footer() {
           {/* Logo */}
           <Image
             src="/assets/imgs/Rissetis_Email Logo Horizontal.png"
-            alt="Rissetis Logo"
+            alt="Λογιστικά Ρισσέτης"
             width={200}
             height={44}
             className="object-contain"
