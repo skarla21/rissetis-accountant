@@ -18,8 +18,8 @@ export default function ArticlesSection({
   const t = useTranslations("articles");
 
   return (
-    <SectionWrapper id="articles" bgColor="gray">
-      <div className="container mx-auto px-4">
+    <SectionWrapper id="articles" bgColor="gray" fullWidth>
+      <div className="container mx-auto px-4 py-16 md:py-20">
         <h2 className="text-3xl font-bold text-center mb-12">{t("title")}</h2>
         {articles.length === 0 ? (
           <p className="text-center text-gray-500 py-8">{t("empty")}</p>

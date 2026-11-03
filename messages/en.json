@@ -3,16 +3,19 @@
     "profile": "Profile",
     "services": "Services",
     "articles": "Articles",
+    "faq": "FAQ",
     "contact": "Contact"
   },
   "footer": {
     "quote": "Your trust is our priority",
-    "follow": "For more updates, follow us on our office's social media"
+    "follow": "For more updates, follow us on our office's social media",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy"
   },
   "profile": {
     "title": "Accountant in Pagkrati — Accounting Rissetis Georgios",
     "subtitle": "Your trusted financial partner in Athens",
-    "description": "Accounting firm in Pagkrati with experience in accounting, tax services, and payroll. We provide complete solutions for businesses and individuals in Athens, with consistency and personal service.",
+    "description": "Georgios Rissetis is an accountant in Pagkrati, Athens, with an office at Filolaou 27 & Timotheou. We provide accounting, tax services, and payroll for businesses and individuals, with consistent personal service.",
     "reviews": {
       "title": "Google Reviews"
     }
@@ -25,19 +28,19 @@
     "items": {
       "item1": {
         "title": "FULL & SPECIALIZED ACCOUNTING SERVICES",
-        "description": "We undertake the organization, maintenance and supervision of the accounting department at your company's headquarters or at our office. If you choose the supervision of your accounting on your premises , our experienced partner will visit your business providing you with all the services required for the proper and efficient operation of your accounting. In addition, if you choose to keep in our office for your convenience and convenience, we take care of the transfer of invoices -from and to your business- for updating the books, as well as the processing of any kind of external work in public services (D.O.Y., I.K.A., O.A.E.E.).\n\nWe provide consulting services for the proper operation of your business.Our services concerning accounting issues are the following:\n•\tComputerized bookkeeping of all categories of books & preparation of accounting statements\n•\tIntroduction and monitoring of regulations (D.O.Y.) \n•\tEstablishment / Discontinuation of operations\n•\tCompany formation of domestic companies\n•\tExpense control and tax support"
+        "description": "Full accounting support for businesses in Pagkrati and Athens — at your premises or at our Filolaou office.\n\nWe undertake the organization, maintenance and supervision of the accounting department at your company's headquarters or at our office. If you choose the supervision of your accounting on your premises , our experienced partner will visit your business providing you with all the services required for the proper and efficient operation of your accounting. In addition, if you choose to keep in our office for your convenience and convenience, we take care of the transfer of invoices -from and to your business- for updating the books, as well as the processing of any kind of external work in public services (D.O.Y., I.K.A., O.A.E.E.).\n\nWe provide consulting services for the proper operation of your business.Our services concerning accounting issues are the following:\n•\tComputerized bookkeeping of all categories of books & preparation of accounting statements\n•\tIntroduction and monitoring of regulations (D.O.Y.) \n•\tEstablishment / Discontinuation of operations\n•\tCompany formation of domestic companies\n•\tExpense control and tax support"
       },
       "item2": {
         "title": "CLOSE MONITORING OF TAX LIABILITIES",
-        "description": "We take responsibility for the careful monitoring and timely settlement of your tax obligations in accordance with the applicable deadlines and provisions. Our many years of experience is a guarantee for the prompt and valid resolution of all kinds of tax issues related to your business activity. In addition, we specialize in comprehensive support and mediation during tax audits by the respective auditing authority as well as in the tax management of real estate. Our provided services concerning tax issues are the following:\n•\tTax planning and strategy\n•\tPreparation for dealing with tax audits\n•\tTax optimization\n•\tDrafting, signing and submitting all tax returns\n•\tTax advice for covering documentation\n•\tInternal tax audit to identify possible problems"
+        "description": "We monitor and settle business tax obligations according to applicable deadlines and regulations.\n\nWe take responsibility for the careful monitoring and timely settlement of your tax obligations in accordance with the applicable deadlines and provisions. Our many years of experience is a guarantee for the prompt and valid resolution of all kinds of tax issues related to your business activity. In addition, we specialize in comprehensive support and mediation during tax audits by the respective auditing authority as well as in the tax management of real estate. Our provided services concerning tax issues are the following:\n•\tTax planning and strategy\n•\tPreparation for dealing with tax audits\n•\tTax optimization\n•\tDrafting, signing and submitting all tax returns\n•\tTax advice for covering documentation\n•\tInternal tax audit to identify possible problems"
       },
       "item3": {
         "title": "VALID SUPPORT FOR LABOUR AND INSURANCE ISSUES",
-        "description": "Our accounting firm provides sound advice on all kinds of employment and insurance issues such as job subsidies, payroll, redundancy payments, labour inspection problems etc. In addition, we can undertake the resolution of tax disputes between partners, employer & employee, or with the government, as well as direct you to the best possible solution for labour issues, based on the current legislation. Our provided services concerning labour and insurance issues are the following:\n•\tCalculation, maintenance & computerization of payroll\n•\tCalculation of contributions and amounts payable\n•\tCompilation and submission of provisional and final tax returns. \n•\tSubmission of detailed periodic declarations (APA)\n•\tMonitoring of collective agreements\n•\tMonitoring of subsidized OAED programs and filing of supporting documents\n•\tPublishing of payroll statements & printing of detailed individual receipts of employees' earnings\n•\tManagement of recruitment, departures and interruptions of cooperation through ERGANI\n•\tConsulting on all kinds of labor and insurance issues"
+        "description": "We provide payroll and support on labour and insurance matters for businesses in Athens.\n\nOur accounting firm provides sound advice on all kinds of employment and insurance issues such as job subsidies, payroll, redundancy payments, labour inspection problems etc. In addition, we can undertake the resolution of tax disputes between partners, employer & employee, or with the government, as well as direct you to the best possible solution for labour issues, based on the current legislation. Our provided services concerning labour and insurance issues are the following:\n•\tCalculation, maintenance & computerization of payroll\n•\tCalculation of contributions and amounts payable\n•\tCompilation and submission of provisional and final tax returns. \n•\tSubmission of detailed periodic declarations (APA)\n•\tMonitoring of collective agreements\n•\tMonitoring of subsidized OAED programs and filing of supporting documents\n•\tPublishing of payroll statements & printing of detailed individual receipts of employees' earnings\n•\tManagement of recruitment, departures and interruptions of cooperation through ERGANI\n•\tConsulting on all kinds of labor and insurance issues"
       },
       "item4": {
         "title": "EFFICIENT SERVICE OF THE NEEDS OF EACH INDIVIDUAL",
-        "description": "We consistently and effectively undertake to serve your every need, from the submission of your tax return and the timely settlement of your tax obligations to the settlement of unresolved tax and insurance issues in public services.\n\nDo not hesitate to contact us if you wish to be informed about the best possible way to approach and resolve any issue that concerns you. We offer the possibility of a free consultation at our office by appointment. Below you can see all our services provided to individuals.\n•\tSubmission of tax returns\n•\tApplications for benefits and allowances\n•\tTransfer processing to the I.O. Y of foreign residents\n•\tSubmission of leases - submission of lease expirations\n•\tMortgage leases\n•\tRepresentation and processing of bureaucratic work in public authorities\n•\tInheritance, parental benefits and donations\n•\tDouble taxation avoidance procedures\n•\tTaxation advice for covering presumptions and capital consumption"
+        "description": "We serve individuals with tax returns, leases, benefits, and public-authority paperwork, including a free consultation by appointment.\n\nWe consistently and effectively undertake to serve your every need, from the submission of your tax return and the timely settlement of your tax obligations to the settlement of unresolved tax and insurance issues in public services.\n\nDo not hesitate to contact us if you wish to be informed about the best possible way to approach and resolve any issue that concerns you. We offer the possibility of a free consultation at our office by appointment. Below you can see all our services provided to individuals.\n•\tSubmission of tax returns\n•\tApplications for benefits and allowances\n•\tTransfer processing to the I.O. Y of foreign residents\n•\tSubmission of leases - submission of lease expirations\n•\tMortgage leases\n•\tRepresentation and processing of bureaucratic work in public authorities\n•\tInheritance, parental benefits and donations\n•\tDouble taxation avoidance procedures\n•\tTaxation advice for covering presumptions and capital consumption"
       }
     }
   },
@@ -55,13 +58,34 @@
     "hours-title": "Working Hours",
     "hours-appointment": "By appointment",
     "hours-schedule": [
-      { "day": "Monday", "time": "9:00 a.m.–3:00 p.m." },
-      { "day": "Tuesday", "time": "9:00 a.m.–2:00 p.m. & 5:00–8:00 p.m." },
-      { "day": "Wednesday", "time": "9:00 a.m.–3:00 p.m." },
-      { "day": "Thursday", "time": "9:00 a.m.–2:00 p.m. & 5:00–8:00 p.m." },
-      { "day": "Friday", "time": "9:00 a.m.–2:00 p.m. & 5:00–8:00 p.m." },
-      { "day": "Saturday", "time": "Closed" },
-      { "day": "Sunday", "time": "Closed" }
+      {
+        "day": "Monday",
+        "time": "9:00 a.m.–3:00 p.m."
+      },
+      {
+        "day": "Tuesday",
+        "time": "9:00 a.m.–2:00 p.m. & 5:00–8:00 p.m."
+      },
+      {
+        "day": "Wednesday",
+        "time": "9:00 a.m.–3:00 p.m."
+      },
+      {
+        "day": "Thursday",
+        "time": "9:00 a.m.–2:00 p.m. & 5:00–8:00 p.m."
+      },
+      {
+        "day": "Friday",
+        "time": "9:00 a.m.–2:00 p.m. & 5:00–8:00 p.m."
+      },
+      {
+        "day": "Saturday",
+        "time": "Closed"
+      },
+      {
+        "day": "Sunday",
+        "time": "Closed"
+      }
     ],
     "contact-form": {
       "message-title": "Send Us a Message",
@@ -72,7 +96,9 @@
       "message-send": "Send Message",
       "message-success": "Message sent successfully! We'll respond shortly.",
       "message-error": "Something went wrong.",
-      "invalid-email": "Please enter a valid email address"
+      "invalid-email": "Please enter a valid email address",
+      "privacy-notice": "We use the details in this form only to reply to your message, as described in our",
+      "privacy-link": "Privacy Policy"
     }
   },
   "admin": {
@@ -106,5 +132,224 @@
       "urlRemoved": "URL removed — the public website will update in about 1–2 minutes.",
       "urlRemoveFailed": "Failed to remove URL"
     }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "description": "Short answers about Accounting Rissetis in Pagkrati, Athens.",
+    "items": [
+      {
+        "question": "Where is the Rissetis accounting office located?",
+        "answer": "Accounting Rissetis is located at Filolaou 27 & Timotheou, 116 33, Pagkrati, Athens. We serve businesses and individuals by appointment at the office or at your premises."
+      },
+      {
+        "question": "What are the office hours?",
+        "answer": "Monday and Wednesday 9:00 a.m.–3:00 p.m.; Tuesday, Thursday and Friday 9:00 a.m.–2:00 p.m. and 5:00–8:00 p.m.; Saturday and Sunday closed. Service is by appointment."
+      },
+      {
+        "question": "What services do you offer for businesses?",
+        "answer": "For businesses we provide full accounting support, tax services, payroll, and labour/insurance assistance. Bookkeeping can be handled at our office or at your company premises."
+      },
+      {
+        "question": "What services do you offer for individuals?",
+        "answer": "For individuals we handle tax returns, leases, benefits, inheritance/parental gifts, and paperwork with public authorities. We also offer a free consultation meeting by appointment."
+      },
+      {
+        "question": "Do you handle payroll and tax returns?",
+        "answer": "Yes. The office handles payroll calculation and filing, APD, ERGANI, as well as preparing and submitting tax returns for businesses and individuals."
+      },
+      {
+        "question": "Do you serve clients outside Pagkrati?",
+        "answer": "Yes. We are based in Pagkrati and serve clients across Athens, with on-site visits to the business when needed."
+      },
+      {
+        "question": "How do I book an appointment or a free consultation?",
+        "answer": "You can book via the contact form on this website, by phone at +30 213 006 8883, or by email at logistikarissetis@gmail.com. We offer a free consultation at the office by appointment."
+      }
+    ]
+  },
+  "terms": {
+    "metaTitle": "Terms of Use | Accounting Rissetis",
+    "metaDescription": "Terms of use of the website and key engagement terms of Accounting Rissetis in Pagkrati, Athens.",
+    "title": "Terms of Use",
+    "lastUpdated": "Last updated: November 2026",
+    "relatedPrivacy": "See also our Privacy Policy",
+    "sections": [
+      {
+        "title": "1. Provider identity",
+        "paragraphs": [
+          "The website giorgosrissetis.gr is owned and operated by the accounting firm “Accounting Rissetis” / Rissetis Dim. Georgios, based at Filolaou 27 & Timotheou, 116 33, Pagkrati, Athens, Greece.\nPhone: +30 213 006 8883\nEmail: logistikarissetis@gmail.com"
+        ]
+      },
+      {
+        "title": "2. Acceptance of terms",
+        "paragraphs": [
+          "By accessing and using this website you accept these Terms of Use. If you do not agree, please do not use the website.",
+          "Accounting and tax services are additionally governed by the specific engagement (oral or written mandate / agreement) between the firm and the client."
+        ]
+      },
+      {
+        "title": "3. Website use — informational content",
+        "paragraphs": [
+          "Website content (services, articles, FAQ, etc.) is provided for general information. It is not personalized tax, accounting, or legal advice and does not by itself create a client–professional relationship.",
+          "Before making decisions with financial or tax consequences, contact us for an appointment. Information may change with legislation; we make reasonable efforts to keep content current without guaranteeing completeness at every moment."
+        ]
+      },
+      {
+        "title": "4. Services and engagement",
+        "paragraphs": [
+          "The firm provides accounting, tax, payroll and related services to businesses and individuals, by appointment and in accordance with Greek law and the professional rules applicable to certified accountants / tax professionals.",
+          "Starting or continuing an engagement requires agreement on scope, fees and the parties’ obligations. Fees are invoiced under applicable tax rules; details are agreed case by case.",
+          "A free introductory consultation may be offered by appointment, without obligation to assign further work."
+        ]
+      },
+      {
+        "title": "5. Client obligations",
+        "paragraphs": [
+          "The client must provide timely, complete and accurate documents and information needed to carry out instructions (invoices, certificates, contracts, employee data, etc.).",
+          "Delays or inaccuracies may affect deadlines toward public authorities (AADE, e-EFKA, ERGANI, etc.); the firm is not liable for consequences caused by the client’s late or incomplete cooperation.",
+          "The client remains responsible for declarations and decisions they sign or approve, except where the law assigns specific responsibility to the signing accountant."
+        ]
+      },
+      {
+        "title": "6. Professional duties and confidentiality",
+        "paragraphs": [
+          "The firm observes professional confidentiality and processes data in line with the Privacy Policy, GDPR / Law 4624/2019, and accountant professional duties.",
+          "Performing instructions may require disclosing data to public authorities or necessary third parties (e.g. tax and social-security systems), as described in the Privacy Policy."
+        ]
+      },
+      {
+        "title": "7. Limitation of liability",
+        "paragraphs": [
+          "The website is provided “as is”. To the extent permitted by law, we do not warrant uninterrupted operation, freedom from errors, or fitness for a particular purpose of site use.",
+          "For professional services, liability is governed by Greek law and applicable professional rules. We are not liable for indirect losses, lost profits, or losses caused by third parties, by law changes after the service was provided, or by inaccurate client instructions or data.",
+          "Links to third-party sites (e.g. taxheaven.gr, gov.gr, maps, social media) are for convenience; we do not control their content."
+        ]
+      },
+      {
+        "title": "8. Intellectual property",
+        "paragraphs": [
+          "Website content, marks, logos and design are protected by intellectual property law. Copying, republishing or commercial use without prior written permission is prohibited, except for reasonable personal informational use."
+        ]
+      },
+      {
+        "title": "9. Contact form and user conduct",
+        "paragraphs": [
+          "The contact form is for information and appointment requests. Sending unlawful, abusive or malicious content, or abusing technical means (spam, automated bulk submissions), is prohibited.",
+          "We use technical protections (e.g. Google reCAPTCHA) and a third-party form delivery provider (FormSubmit); processing is described in the Privacy Policy."
+        ]
+      },
+      {
+        "title": "10. Changes",
+        "paragraphs": [
+          "We may update these terms. The current version is published on this page with a date indication. Continued use of the website after posting may constitute acceptance where permitted by law."
+        ]
+      },
+      {
+        "title": "11. Governing law and jurisdiction",
+        "paragraphs": [
+          "These terms are governed by Greek law. Disputes arising from website use or engagement with the firm are subject to the courts of Athens, without prejudice to mandatory consumer-protection rules where they apply."
+        ]
+      },
+      {
+        "title": "12. Contact",
+        "paragraphs": [
+          "Questions about these Terms of Use: logistikarissetis@gmail.com or +30 213 006 8883, Filolaou 27 & Timotheou, 116 33, Athens, Greece."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "metaTitle": "Privacy Policy | Accounting Rissetis",
+    "metaDescription": "Privacy and personal data protection policy of Accounting Rissetis (GDPR / Greek Law 4624/2019).",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: November 2026",
+    "relatedTerms": "See also our Terms of Use",
+    "sections": [
+      {
+        "title": "1. Data controller",
+        "paragraphs": [
+          "The data controller is the accounting firm “Accounting Rissetis” / Rissetis Dim. Georgios.\nAddress: Filolaou 27 & Timotheou, 116 33, Pagkrati, Athens, Greece\nPhone: +30 213 006 8883\nEmail: logistikarissetis@gmail.com"
+        ]
+      },
+      {
+        "title": "2. Scope",
+        "paragraphs": [
+          "This policy covers processing via giorgosrissetis.gr (including the contact form) and processing in the course of accounting, tax and payroll services for clients.",
+          "For some activities the firm acts as controller; in others (e.g. payroll for a client’s employees) it may act as processor on behalf of the client-employer. Roles are clarified in the engagement."
+        ]
+      },
+      {
+        "title": "3. Categories of data we collect",
+        "paragraphs": [
+          "Website / contact form: name, email address, message content, and security-related technical data linked to reCAPTCHA.\nService clients (indicatively): identity and contact details, tax ID and tax/social-security data, accounting documents, payroll and employee data when required for the mandate, billing/payment details.\nWe do not intentionally collect special-category data via the website form; if you include such data in a message, we will process it only as needed to reply or to ask you to use a more appropriate channel."
+        ]
+      },
+      {
+        "title": "4. Purposes and legal bases",
+        "paragraphs": [
+          "Responding to contact / appointment requests: legitimate interest or pre-contractual steps at your request (Art. 6(1)(b) or (f) GDPR).\nProviding accounting / tax services: performance of a contract and pre-contractual steps (Art. 6(1)(b)).\nMeeting tax, social-security and labour obligations: legal obligation (Art. 6(1)(c)).\nOperating, securing and improving the website (e.g. spam protection via reCAPTCHA): legitimate interest (Art. 6(1)(f)).\nWhere consent is required (e.g. certain non-essential cookies), consent is the legal basis (Art. 6(1)(a))."
+        ]
+      },
+      {
+        "title": "5. Recipients / disclosures",
+        "paragraphs": [
+          "Public authorities and systems as required for services: indicatively AADE, e-EFKA, ERGANI, DYPA/OAED, chambers and other competent bodies.\nWebsite technical providers: FormSubmit.co (relaying form messages to the firm’s email), Google (reCAPTCHA and map embeds where used), website hosting/CDN providers.\nBanks or payment providers in the context of invoicing, where applicable.\nWe do not sell personal data."
+        ]
+      },
+      {
+        "title": "6. Transfers outside the EEA",
+        "paragraphs": [
+          "Some providers (e.g. Google, FormSubmit) may process data in third countries. Where that occurs, we seek appropriate GDPR safeguards (e.g. adequacy decisions or standard contractual clauses) to the extent offered by each provider."
+        ]
+      },
+      {
+        "title": "7. Retention",
+        "paragraphs": [
+          "Contact-form messages: for as long as needed to respond and handle the request, then for a reasonable correspondence archive period (indicatively up to 24 months), unless a longer obligation or dispute arises.\nClient files and tax/accounting records: according to statutory record-keeping periods and accountant professional duties (often multi-year tax/social-security audit periods).\nTechnical security logs: for a limited period required for security purposes."
+        ]
+      },
+      {
+        "title": "8. Security and professional secrecy",
+        "paragraphs": [
+          "We apply reasonable organisational and technical measures to protect data against unauthorised access, loss or alteration. Client information is kept under the professional secrecy applicable to accountants / tax professionals, subject to mandatory disclosures required by law."
+        ]
+      },
+      {
+        "title": "9. Cookies and similar technologies",
+        "paragraphs": [
+          "The website may use necessary technical cookies and third-party technologies (e.g. Google reCAPTCHA, Google Maps embeds, social media links/buttons). Third parties may set their own cookies under their policies.\nYou can manage cookies in your browser settings. Blocking some cookies may affect features (e.g. form submission with reCAPTCHA)."
+        ]
+      },
+      {
+        "title": "10. Your rights",
+        "paragraphs": [
+          "Under the GDPR you may have rights of access, rectification, erasure, restriction, objection and portability, and the right to withdraw consent where processing is based on consent, without affecting prior lawful processing.\nSome rights are limited where processing is required by legal obligation (e.g. keeping tax records) or where the firm acts as processor for a client-employer.\nTo exercise rights: logistikarissetis@gmail.com or the contact details in section 1."
+        ]
+      },
+      {
+        "title": "11. Complaint to the Hellenic DPA",
+        "paragraphs": [
+          "You may lodge a complaint with the Hellenic Data Protection Authority (HDPA), www.dpa.gr, if you believe processing infringes applicable law."
+        ]
+      },
+      {
+        "title": "12. Children",
+        "paragraphs": [
+          "The website and services are not directed at children. We do not knowingly collect children’s data via the form. If we become aware of such collection, we will delete it where feasible and lawful."
+        ]
+      },
+      {
+        "title": "13. Changes",
+        "paragraphs": [
+          "We may update this policy. The current version is published on this page with an update date."
+        ]
+      },
+      {
+        "title": "14. Privacy contact",
+        "paragraphs": [
+          "For privacy matters: logistikarissetis@gmail.com, +30 213 006 8883, Filolaou 27 & Timotheou, 116 33, Athens, Greece."
+        ]
+      }
+    ]
   }
 }

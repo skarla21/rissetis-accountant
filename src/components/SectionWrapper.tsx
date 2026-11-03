@@ -2,14 +2,24 @@
 
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface SectionWrapperProps {
   id: string;
   children: ReactNode;
   className?: string;
-  bgColor?: "white" | "gray";
+  bgColor?: "white" | "gray" | "warm" | "cool";
   fullWidth?: boolean;
+  /** Keep first-fold sections tall; avoid on content sections (causes empty gaps). */
+  minHeightScreen?: boolean;
 }
+
+const bgColorClass = {
+  white: "bg-white",
+  gray: "bg-gray-50",
+  warm: "bg-[#faf9f7]",
+  cool: "bg-[#eef1f4]",
+} as const;
 
 export default function SectionWrapper({
   id,
@@ -17,13 +27,17 @@ export default function SectionWrapper({
   className = "",
   bgColor = "white",
   fullWidth = false,
+  minHeightScreen = false,
 }: SectionWrapperProps) {
-  const bgColorClass = bgColor === "gray" ? "bg-gray-50" : "bg-white";
-
   return (
     <section
       id={id}
-      className={`min-h-screen w-full ${bgColorClass} ${className}`}
+      className={cn(
+        "w-full",
+        bgColorClass[bgColor],
+        minHeightScreen && "min-h-screen",
+        className
+      )}
     >
       {fullWidth ? (
         children

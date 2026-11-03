@@ -18,7 +18,13 @@ export default function ProfileSection() {
   const t = useTranslations();
 
   return (
-    <SectionWrapper id="profile" bgColor="gray" className="relative" fullWidth>
+    <SectionWrapper
+      id="profile"
+      bgColor="gray"
+      className="relative"
+      fullWidth
+      minHeightScreen
+    >
       {/* Background with subtle pattern - visible on all screens */}
       <div className="absolute inset-0 w-full h-full">
         <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100">

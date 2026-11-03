@@ -1,0 +1,22 @@
+# Λογιστικά Ρισσέτης
+
+> Accounting firm in Pagkrati, Athens (Φιλολάου 27 και Τιμοθέου, 116 33). Accountant Georgios Rissetis provides accounting, tax services, and payroll for businesses and individuals. Phone: +30 213 006 8883. Email: logistikarissetis@gmail.com.
+
+Hours: Mon/Wed 09:00–15:00; Tue/Thu/Fri 09:00–14:00 & 17:00–20:00; Sat/Sun closed. Appointments preferred. Free consultation available by appointment.
+
+## Pages
+
+- [Greek homepage](https://www.giorgosrissetis.gr/el): Profile, services, FAQ, articles, contact (primary)
+- [English homepage](https://www.giorgosrissetis.gr/en): Same sections in English
+- [Terms of Use (EL)](https://www.giorgosrissetis.gr/el/terms)
+- [Privacy Policy (EL)](https://www.giorgosrissetis.gr/el/privacy)
+- [Terms of Use (EN)](https://www.giorgosrissetis.gr/en/terms)
+- [Privacy Policy (EN)](https://www.giorgosrissetis.gr/en/privacy)
+
+## Key sections (on each locale homepage)
+
+- `#profile` — Who we are / local accountant in Pagkrati
+- `#services` — Accounting, tax, payroll/labour, individuals
+- `#articles` — Curated external tax/gov article links
+- `#faq` — Short answers: address, hours, services, booking
+- `#contact` — Address, hours, contact form

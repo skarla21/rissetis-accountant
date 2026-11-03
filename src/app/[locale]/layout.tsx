@@ -100,99 +100,6 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "AccountingService",
-    name: "Λογιστικά Ρισσέτης",
-    alternateName: "Ρισσέτης Δημ. Γεώργιος",
-    description: SEO_COPY[locale].description,
-    url: SITE_URL,
-    logo: `${SITE_URL}/assets/imgs/RissetisOnlyLogoSocialTransp.png`,
-    image: `${SITE_URL}/assets/imgs/Rissetis_Social%20Logo%20Name%20Circle.png`,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Φιλολάου 27 και Τιμοθέου",
-      addressLocality: "Παγκράτι",
-      postalCode: "116 33",
-      addressRegion: "Αθήνα",
-      addressCountry: "GR",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 37.9666549,
-      longitude: 23.7525564,
-    },
-    telephone: "+302130068883",
-    email: "logistikarissetis@gmail.com",
-    hasMap:
-      "https://www.google.com/maps/place/%CE%A6%CE%B9%CE%BB%CE%BF%CE%BB%CE%AC%CE%BF%CF%85+27,+%CE%91%CE%B8%CE%AE%CE%BD%CE%B1+116+33/@37.9666591,23.7499815,17z",
-    areaServed: [
-      {
-        "@type": "City",
-        name: "Αθήνα",
-      },
-      {
-        "@type": "AdministrativeArea",
-        name: "Παγκράτι",
-      },
-    ],
-    sameAs: [
-      "https://www.facebook.com/share/1Ln9RtP2uG/",
-      "https://www.instagram.com/george_rissetis/",
-    ],
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Monday",
-        opens: "09:00",
-        closes: "15:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Tuesday",
-        opens: "09:00",
-        closes: "14:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Tuesday",
-        opens: "17:00",
-        closes: "20:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Wednesday",
-        opens: "09:00",
-        closes: "15:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Thursday",
-        opens: "09:00",
-        closes: "14:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Thursday",
-        opens: "17:00",
-        closes: "20:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Friday",
-        opens: "09:00",
-        closes: "14:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Friday",
-        opens: "17:00",
-        closes: "20:00",
-      },
-    ],
-    priceRange: "$$",
-  };
-
   return (
     <html lang={locale}>
       <head>
@@ -203,12 +110,6 @@ export default async function LocaleLayout({
               history.scrollRestoration = 'auto';
             }
           `,
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
           }}
         />
       </head>

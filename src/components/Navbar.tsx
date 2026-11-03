@@ -1,29 +1,59 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { FaUser, FaBriefcase, FaNewspaper, FaEnvelope } from "react-icons/fa";
+import { usePathname } from "next/navigation";
+import {
+  FaUser,
+  FaBriefcase,
+  FaNewspaper,
+  FaEnvelope,
+  FaQuestionCircle,
+} from "react-icons/fa";
 import SocialMedia from "./SocialMedia";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
+
+const SECTIONS = [
+  { id: "profile", icon: FaUser },
+  { id: "services", icon: FaBriefcase },
+  { id: "articles", icon: FaNewspaper },
+  { id: "faq", icon: FaQuestionCircle },
+  { id: "contact", icon: FaEnvelope },
+] as const;
 
 export default function Navbar() {
   const navigationText = useTranslations("navigation");
   const [activeSection, setActiveSection] = useState<string>("profile");
+  const pathname = usePathname();
 
-  // Update active section based on scroll position
+  const { isHome, homeHref, sectionHref } = useMemo(() => {
+    const segments = pathname.split("/").filter(Boolean);
+    const currentLocale =
+      segments[0] === "en" || segments[0] === "el" ? segments[0] : "el";
+    const onHome = segments.length <= 1;
+    const home = `/${currentLocale}`;
+    return {
+      isHome: onHome,
+      homeHref: `${home}#profile`,
+      sectionHref: (id: string) => (onHome ? `#${id}` : `${home}#${id}`),
+    };
+  }, [pathname]);
+
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["profile", "services", "articles", "contact"];
+    if (!isHome) {
+      setActiveSection("");
+      return;
+    }
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
+    const handleScroll = () => {
+      for (const { id } of SECTIONS) {
+        const element = document.getElementById(id);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Consider a section active if it's at the top of the viewport
           if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section);
+            setActiveSection(id);
             break;
           }
         }
@@ -31,21 +61,18 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    // Initial check
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
 
   return (
     <>
-      {/* Main Navbar - Hidden on mobile */}
       <nav className="sticky top-0 left-0 right-0 bg-white shadow-md z-40 hidden md:block">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            {/* Logo */}
             <motion.a
-              href="#profile"
+              href={homeHref}
               className="flex items-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -60,98 +87,36 @@ export default function Navbar() {
               />
             </motion.a>
 
-            {/* Navigation Links */}
-            <div className="flex justify-center space-x-8">
-              <div className="relative group">
-                <a
-                  href="#profile"
-                  className={`flex items-center space-x-2 ${
-                    activeSection === "profile"
-                      ? "text-blue-500"
-                      : "text-gray-600 group-hover:text-blue-600"
-                  }`}
-                >
-                  <FaUser />
-                  <span>{navigationText("profile")}</span>
-                </a>
-                <span
-                  className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
-                    activeSection === "profile"
-                      ? "w-full bg-blue-500"
-                      : "w-0 bg-blue-600 group-hover:w-full"
-                  }`}
-                ></span>
-              </div>
-              <div className="relative group">
-                <a
-                  href="#services"
-                  className={`flex items-center space-x-2 ${
-                    activeSection === "services"
-                      ? "text-blue-500"
-                      : "text-gray-600 group-hover:text-blue-600"
-                  }`}
-                >
-                  <FaBriefcase />
-                  <span>{navigationText("services")}</span>
-                </a>
-                <span
-                  className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
-                    activeSection === "services"
-                      ? "w-full bg-blue-500"
-                      : "w-0 bg-blue-600 group-hover:w-full"
-                  }`}
-                ></span>
-              </div>
-              <div className="relative group">
-                <a
-                  href="#articles"
-                  className={`flex items-center space-x-2 ${
-                    activeSection === "articles"
-                      ? "text-blue-500"
-                      : "text-gray-600 group-hover:text-blue-600"
-                  }`}
-                >
-                  <FaNewspaper />
-                  <span>{navigationText("articles")}</span>
-                </a>
-                <span
-                  className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
-                    activeSection === "articles"
-                      ? "w-full bg-blue-500"
-                      : "w-0 bg-blue-600 group-hover:w-full"
-                  }`}
-                ></span>
-              </div>
-              <div className="relative group">
-                <a
-                  href="#contact"
-                  className={`flex items-center space-x-2 ${
-                    activeSection === "contact"
-                      ? "text-blue-500"
-                      : "text-gray-600 group-hover:text-blue-600"
-                  }`}
-                >
-                  <FaEnvelope />
-                  <span>{navigationText("contact")}</span>
-                </a>
-                <span
-                  className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
-                    activeSection === "contact"
-                      ? "w-full bg-blue-500"
-                      : "w-0 bg-blue-600 group-hover:w-full"
-                  }`}
-                ></span>
-              </div>
+            <div className="flex justify-center space-x-6 lg:space-x-8">
+              {SECTIONS.map(({ id, icon: Icon }) => (
+                <div key={id} className="relative group">
+                  <a
+                    href={sectionHref(id)}
+                    className={`flex items-center space-x-2 ${
+                      activeSection === id
+                        ? "text-blue-500"
+                        : "text-gray-600 group-hover:text-blue-600"
+                    }`}
+                  >
+                    <Icon />
+                    <span>{navigationText(id)}</span>
+                  </a>
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
+                      activeSection === id
+                        ? "w-full bg-blue-500"
+                        : "w-0 bg-blue-600 group-hover:w-full"
+                    }`}
+                  ></span>
+                </div>
+              ))}
             </div>
 
-            {/* Right section with Locale Switcher and Social Media */}
             <div className="flex space-x-8">
               <div className="flex space-x-4">
-                {/* Social Media */}
                 <SocialMedia />
               </div>
               <div className="flex">
-                {/* Locale Switcher */}
                 <LocaleSwitcher />
               </div>
             </div>
@@ -159,13 +124,11 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Top Navbar - Logo and Right Section */}
       <nav className="sticky top-0 left-0 right-0 bg-white shadow-md z-40 md:hidden">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            {/* Logo */}
             <motion.a
-              href="#profile"
+              href={homeHref}
               className="flex items-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -180,14 +143,11 @@ export default function Navbar() {
               />
             </motion.a>
 
-            {/* Right section with Locale Switcher and Social Media */}
             <div className="flex space-x-8">
               <div className="flex space-x-4">
-                {/* Social Media */}
                 <SocialMedia />
               </div>
               <div className="flex">
-                {/* Locale Switcher */}
                 <LocaleSwitcher />
               </div>
             </div>
@@ -195,42 +155,21 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Navigation Links - Bottom Fixed */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-40">
         <div className="container mx-auto px-4 py-3">
           <div className="flex justify-around items-center">
-            <a
-              href="#profile"
-              className={`flex flex-col items-center ${
-                activeSection === "profile" ? "text-blue-500" : "text-gray-600"
-              }`}
-            >
-              <FaUser size={20} />
-            </a>
-            <a
-              href="#services"
-              className={`flex flex-col items-center ${
-                activeSection === "services" ? "text-blue-500" : "text-gray-600"
-              }`}
-            >
-              <FaBriefcase size={20} />
-            </a>
-            <a
-              href="#articles"
-              className={`flex flex-col items-center ${
-                activeSection === "articles" ? "text-blue-500" : "text-gray-600"
-              }`}
-            >
-              <FaNewspaper size={20} />
-            </a>
-            <a
-              href="#contact"
-              className={`flex flex-col items-center ${
-                activeSection === "contact" ? "text-blue-500" : "text-gray-600"
-              }`}
-            >
-              <FaEnvelope size={20} />
-            </a>
+            {SECTIONS.map(({ id, icon: Icon }) => (
+              <a
+                key={id}
+                href={sectionHref(id)}
+                className={`flex flex-col items-center ${
+                  activeSection === id ? "text-blue-500" : "text-gray-600"
+                }`}
+                aria-label={navigationText(id)}
+              >
+                <Icon size={20} />
+              </a>
+            ))}
           </div>
         </div>
       </div>

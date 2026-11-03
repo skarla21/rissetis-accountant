@@ -5,6 +5,7 @@ import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast, ToastContainer } from "react-toastify";
 import { IoIosSend } from "react-icons/io";
+import { Link } from "@/i18n/navigation";
 import "react-toastify/dist/ReactToastify.css";
 
 interface FormData {
@@ -212,6 +213,17 @@ export default function ContactForm() {
                 : contactFormText("message-send")}
             </span>
           </button>
+
+          <p className="text-xs text-gray-500 text-center leading-relaxed">
+            {contactFormText("privacy-notice")}{" "}
+            <Link
+              href="/privacy"
+              className="text-blue-600 hover:text-blue-800 underline-offset-2 hover:underline"
+            >
+              {contactFormText("privacy-link")}
+            </Link>
+            .
+          </p>
 
           <ToastContainer
             position="bottom-right"
