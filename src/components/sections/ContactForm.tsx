@@ -1,12 +1,16 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
-import { useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { useState, useEffect, useRef, ChangeEvent, FormEvent } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { toast, ToastContainer } from "react-toastify";
 import { IoIosSend } from "react-icons/io";
 import { Link } from "@/i18n/navigation";
 import "react-toastify/dist/ReactToastify.css";
+
+const MAX_NAME_LENGTH = 100;
+const MAX_EMAIL_LENGTH = 254;
+const MAX_MESSAGE_LENGTH = 5000;
 
 interface FormData {
   name: string;
@@ -25,11 +29,17 @@ export default function ContactForm() {
   const [succeeded, setSucceeded] = useState<boolean>(false);
   const [errors, setErrors] = useState<string | null>(null);
   const [emailValid, setEmailValid] = useState<boolean>(true);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const contactFormText = useTranslations("contact.contact-form");
 
   const pathname = usePathname();
   const currentLocale = pathname.split("/")[1];
+
+  const resetRecaptcha = (): void => {
+    recaptchaRef.current?.reset();
+    setRecaptchaValue(null);
+  };
 
   const validateEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -71,26 +81,36 @@ export default function ContactForm() {
     setSubmitting(true);
     setErrors(null);
     try {
-      const res = await fetch(
-        `https://formsubmit.co/ajax/${process.env.NEXT_PUBLIC_RISSETIS_EMAIL}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
-      const data = await res.json();
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: recaptchaValue,
+        }),
+      });
+
+      let data: { message?: string; ok?: boolean } = {};
+      try {
+        data = (await res.json()) as { message?: string; ok?: boolean };
+      } catch {
+        // Non-JSON error body (proxy/HTML) — fall through to translated error
+      }
+
       if (res.ok) {
         setSucceeded(true);
         setFormData({ name: "", email: "", message: "" });
-        setRecaptchaValue(null);
       } else {
-        setErrors(data.message || contactFormText("message-error"));
+        setErrors(contactFormText("message-error"));
+        if (data.message) {
+          console.error("Contact API error:", data.message);
+        }
       }
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    } catch (error: any) {
-      setErrors(error.message);
+    } catch (error: unknown) {
+      setErrors(contactFormText("message-error"));
+      console.error("Contact form submit failed:", error);
     } finally {
+      resetRecaptcha();
       setSubmitting(false);
     }
   };
@@ -131,6 +151,7 @@ export default function ContactForm() {
               name="name"
               type="text"
               required
+              maxLength={MAX_NAME_LENGTH}
               value={formData.name}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg"
@@ -149,6 +170,7 @@ export default function ContactForm() {
               name="email"
               type="text"
               required
+              maxLength={MAX_EMAIL_LENGTH}
               value={formData.email}
               onChange={handleChange}
               className={`w-full px-4 py-3 border ${
@@ -171,6 +193,7 @@ export default function ContactForm() {
               name="message"
               rows={4}
               required
+              maxLength={MAX_MESSAGE_LENGTH}
               value={formData.message}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg"
@@ -179,8 +202,10 @@ export default function ContactForm() {
 
           <div className="flex justify-center">
             <ReCAPTCHA
+              ref={recaptchaRef}
               sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
               onChange={(value: string | null) => setRecaptchaValue(value)}
+              onExpired={resetRecaptcha}
               hl={currentLocale}
             />
           </div>
